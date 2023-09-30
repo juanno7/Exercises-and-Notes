@@ -1,0 +1,69 @@
+Exercise: Create a simple console-based tic-tac-toe game where two players can take turns to make moves.
+Walkthrough:
+
+Create a new Java class file, e.g., TicTacToe.java.
+Implement a 2D array to represent the game board.
+Allow two players to take turns, entering their moves.
+Check for a win condition or a draw after each move.
+Display the game board and the result.
+2. Logical Branching and Loops
+
+Exercise: Implement a program that generates a random math quiz with addition, subtraction, multiplication, and division questions. Allow the user to answer, and keep track of their score.
+Walkthrough:
+
+Create a new Java class file, e.g., MathQuiz.java.
+Generate random math questions with different operators.
+Prompt the user to answer the questions and validate their responses.
+Keep track of the user's score and display it at the end.
+3. Arrays and Command-Line Programs
+
+Exercise: Write a program that simulates a basic inventory management system using arrays and files. Allow users to add, update, list, and remove products from the inventory. Save the inventory data to a file.
+Walkthrough:
+
+Create a new Java class file, e.g., InventoryManagement.java.
+Use arrays to store product information (name, quantity, price).
+Implement methods for adding, updating, listing, and removing products.
+Read and write inventory data to a file (e.g., a text file) for persistence.
+4. Introduction to Objects
+
+Exercise: Model a library system with classes for books, patrons, and library records. Implement methods for borrowing and returning books, as well as tracking due dates.
+Walkthrough:
+
+Create Java class files for Book, Patron, and LibraryRecord.
+Define attributes and methods for each class.
+Implement book borrowing, returning, and due date tracking in the LibraryRecord class.
+Create instances of books, patrons, and library records to simulate interactions in the library.
+5. Lists, Stacks, Queues, and Maps
+
+Exercise: Develop a Java program that simulates a basic task management system using ArrayList for tasks. Allow users to create tasks, set priorities, mark tasks as complete, and list tasks by priority.
+Walkthrough:
+
+Create a new Java class file, e.g., TaskManager.java.
+Use an ArrayList to store task objects with attributes like name, description, and priority.
+Implement methods for adding, updating, and listing tasks.
+Allow users to mark tasks as complete and prioritize them.
+6. Classes and Encapsulation
+
+Exercise: Model an online shopping system with classes for products, customers, and orders. Implement methods for adding products to a cart, calculating order totals, and processing orders.
+Walkthrough:
+
+Create Java class files for Product, Customer, and Order.
+Define attributes and methods for each class.
+Implement cart management, order calculation, and order processing logic.
+Simulate a customer's shopping experience by adding products to a cart and placing orders.
+7. Inheritance and Polymorphism
+
+Exercise: Extend the shape hierarchy example from earlier to include additional shapes like "Triangle" and "Square." Implement their area and perimeter calculation methods.
+Walkthrough:
+
+Create Java class files for Triangle and Square, extending the Shape hierarchy.
+Provide implementations for area and perimeter calculations for these new shapes.
+Use polymorphism to calculate areas and perimeters for various shapes in the main method.
+8. Unit Testing and Exception Handling
+
+Exercise: Enhance the calculator program from earlier to handle more complex expressions, including parentheses and operator precedence. Write comprehensive unit tests to verify its correctness.
+Walkthrough:
+
+Modify the Calculator class to handle complex expressions using appropriate data structures (e.g., stacks).
+Implement parsing and evaluation logic for expressions with parentheses and operator precedence.
+Write a suite of JUnit tests to cover various expression scenarios and verify the calculator's accuracy.

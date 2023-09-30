@@ -1,0 +1,53 @@
+Introduction to Objects
+
+Objects are instances of classes.
+
+Classes define attributes (fields) and behaviors (methods) for objects.
+
+Constructors initialize objects.
+
+Object-oriented programming (OOP) focuses on modeling real-world entities.
+
+Examples: Person class with name and age, methods for actions like "walk" or "eat."
+
+Example (Person Class):
+
+java
+Copy code
+public class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void walk() {
+        System.out.println(name + " is walking.");
+    }
+
+    public void eat() {
+        System.out.println(name + " is eating.");
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+public class PersonDemo {
+    public static void main(String[] args) {
+        Person person1 = new Person("Alice", 25);
+        Person person2 = new Person("Bob", 30);
+
+        person1.walk();
+        person2.eat();
+
+        System.out.println(person1.getName() + " is " + person1.getAge() + " years old.");
+    }
+}

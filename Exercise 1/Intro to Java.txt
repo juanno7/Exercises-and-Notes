@@ -1,0 +1,3 @@
+Java is known for its "Write Once, Run Anywhere" (WORA) philosophy, meaning code written in Java can run on any platform with a compatible JVM.
+It is a statically typed language, which means variable types are known at compile-time.
+Java has automatic memory management through garbage collection, making it easier to manage memory compared to languages like C++

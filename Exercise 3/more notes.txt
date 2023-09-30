@@ -1,0 +1,5 @@
+Arrays provide an efficient way to store and manipulate collections of data of the same type.
+
+The command-line interface is a powerful tool for interacting with programs and passing arguments to them.
+
+Using command-line arguments allows for user customization and automation of tasks.

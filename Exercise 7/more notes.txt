@@ -1,0 +1,5 @@
+Inheritance establishes an "is-a" relationship between classes, allowing for code reuse and hierarchical organization.
+
+Polymorphism allows objects of different classes to be treated as instances of a common superclass, simplifying code and promoting flexibility.
+
+Interfaces and abstract classes define contracts for classes to implement or extend.

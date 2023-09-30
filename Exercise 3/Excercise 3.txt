@@ -1,0 +1,5 @@
+Exercise: Write a Java program to find the sum and average of elements in an array.
+
+Exercise: Implement a program that reads command-line arguments and performs mathematical operations on them (e.g., addition, subtraction).
+
+Exercise: Create a program that simulates a basic inventory system using arrays.

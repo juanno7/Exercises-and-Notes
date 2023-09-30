@@ -1,0 +1,67 @@
+Exercise: Create a Java program that models a shape hierarchy with a superclass "Shape" and subclasses like "Circle" and "Rectangle." Implement methods to calculate area and perimeter for each shape.
+Walkthrough:
+
+Create a new Java class file, e.g., Shape.java, containing the Shape superclass with methods for calculating area and perimeter.
+Create subclass Java files, e.g., Circle.java and Rectangle.java, extending the Shape superclass and providing implementations for area and perimeter calculations.
+In the main method, create instances of different shapes and calculate their areas and perimeters using polymorphism.
+java
+Copy code
+// Shape.java
+public abstract class Shape {
+    public abstract double calculateArea();
+    public abstract double calculatePerimeter();
+}
+
+// Circle.java
+public class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+// Rectangle.java
+public class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+}
+
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        Shape circle = new Circle(5.0);
+        Shape rectangle = new Rectangle(4.0, 6.0);
+
+        System.out.println("Circle Area: " + circle.calculateArea());
+        System.out.println("Circle Perimeter: " + circle.calculatePerimeter());
+
+        System.out.println("Rectangle Area: " + rectangle.calculateArea());
+        System.out.println("Rectangle Perimeter: " + rectangle.calculatePerimeter());
+    }
+}

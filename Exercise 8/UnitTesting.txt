@@ -1,0 +1,38 @@
+make sure the Test packet is the same as the packet name you are using
+
+should be the same name as the class followed by test
+
+first should test for what should happen 
+
+and second should be the actual result
+
+assert means we compare actual result with expected result
+
+Assert.assertequals(expectedResult, actualResult)
+
+import org.junit.Test:
+private "object created" 'ex' SameFirstLast sameFirstLast;
+
+@Before
+public void setUp(){
+initialize the object of the class you want to test
+'ex' sameFirstLast = new SameFirstLsst();
+}
+
+@Test
+public void passingMethod(){
+a b = new a;
+boolean expectedResult = true;
+boolean actualResult = "same name as the class" or "a"."testmethod(input);
+Assert.assertEquald(expectedResult, actualResult);
+
+}
+
+
+@Test
+public void failingMethod(){
+"object creation" aka a b = new a;
+boolean expectedResult = false;
+boolean actualResult = "a".passingmethod(input);
+Assert.assertEquals(expectedResult, actualResult);
+}

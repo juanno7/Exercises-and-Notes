@@ -1,0 +1,54 @@
+Exercise: Create a Java program that models a bank account with attributes like account number, balance, and account holder name. Implement methods for deposit, withdrawal, and balance inquiry.
+Walkthrough:
+
+Create a new Java class file, e.g., BankAccount.java.
+Inside the class, define private fields for accountNumber, balance, and accountHolderName.
+Create a constructor to initialize these fields when a new bank account object is created.
+Implement methods for deposit, withdrawal, and balance inquiry, updating the balance accordingly.
+In the main method, create an instance of the BankAccount class, perform transactions, and display the balance.
+java
+Copy code
+public class BankAccount {
+    private String accountNumber;
+    private double balance;
+    private String accountHolderName;
+
+    public BankAccount(String accountNumber, double balance, String accountHolderName) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.accountHolderName = accountHolderName;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited $" + amount);
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn $" + amount);
+        } else {
+            System.out.println("Invalid withdrawal amount or insufficient balance.");
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public static void main(String[] args) {
+        BankAccount myAccount = new BankAccount("12345", 1000.0, "John Doe");
+        System.out.println("Account Holder: " + myAccount.accountHolderName);
+        System.out.println("Initial Balance: $" + myAccount.getBalance());
+
+        myAccount.deposit(500.0);
+        myAccount.withdraw(200.0);
+
+        System.out.println("Current Balance: $" + myAccount.getBalance());
+    }
+}

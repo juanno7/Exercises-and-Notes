@@ -1,0 +1,42 @@
+Arrays and Command-Line Programs
+
+Arrays are collections of elements of the same data type.
+
+Arrays are zero-indexed, and you can access elements using their index.
+
+Command-line programs accept user input from the command line.
+
+Use args[] to access command-line arguments.
+
+Example: Sum and average calculation using arrays.
+Example (Arrays):
+
+java
+Copy code
+int[] numbers = {5, 10, 15, 20, 25};
+int sum = 0;
+
+for (int i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+}
+
+double average = (double) sum / numbers.length;
+System.out.println("Sum: " + sum);
+System.out.println("Average: " + average);
+Example (Command-Line Program):
+
+java
+Copy code
+public class CommandLineArgs {
+    public static void main(String[] args) {
+        if (args.length > 0) {
+            System.out.println("You provided " + args.length + " command-line arguments.");
+            for (String arg : args) {
+                System.out.println("Argument: " + arg);
+            }
+        } else {
+            System.out.println("No command-line arguments provided.");
+        }
+    }
+}
+These examples illustrate the concepts in a practical context, making it easier to understand how they work in Java programming. Feel free to experiment with and modify these examples to deepen your understanding.

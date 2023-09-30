@@ -1,0 +1,5 @@
+Exercise: Write a Java program to print "Hello, World!" to the console.
+
+Exercise: Create a program that calculates the area of a rectangle based on user input for length and width.
+
+Exercise: Write a program that converts temperature from Fahrenheit to Celsius using the formula (Fahrenheit - 32) * 5/9

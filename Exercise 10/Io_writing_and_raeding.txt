@@ -1,0 +1,77 @@
+File Reading
+
+Start with a scanner or a buffer reader
+
+use a while loop to open and close a file after the while loop is false the file will close
+ex
+Scanner scanner = new Scanner(new File('path name");
+While(reader.hasNextLine()){
+String line = reader.nextLine();
+System.out.println(line):
+}
+
+
+File poem = new File("path name")
+
+ex with buffer reader
+BufferedReader reader = new BufferedReader(new FileReader(new FileReader(poem)));
+String line = null;
+while((line = reader.readline()) != null){
+System,out,println(line);
+
+} end with try catch block
+
+
+
+File Writing
+
+PrintWriter writer = new PrintWriter(new FileOutputStream("filename", true)); this appends it and doesn't overwrite the file
+
+writer.println("Hello"); 
+
+writer.flush(); or writer.close();
+with flush you can still use writer with close you can't
+
+or you can do
+
+try(PrintWriter writer = new PrintWriter(new FileOutputStream("filename", true)){
+Scanner reader = new Scanner(new File("pathname")) ;
+
+	while(reader.hasNextLine()) {
+	String line = reader.nextline();
+	writer.println(line);
+     }
+
+} catch (IOException e) {
+sout(e.getMessage());
+}
+
+
+
+To put a file in a directory
+
+first, make the directory
+
+File directory = new File("pathname" ex "data");
+directory.mkdir():
+File notes = new File(directory, "pathname" ex "notes.txt");
+                        |                |
+                first parameter, second parameter 
+
+try (PrintWriter writer = new PrintWriter(notes)){
+writer.println("My notes");
+
+} catch (IOException e){
+sout(e.getMessage()):
+}
+
+if directory already exists it doesn't do anything else it creates a new directory
+
+
+
+
+
+
+
+
+

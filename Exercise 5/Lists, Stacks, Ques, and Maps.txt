@@ -1,0 +1,47 @@
+Lists, Stacks, Queues, and Maps
+
+Lists (ArrayList, LinkedList) store collections of objects.
+
+Stacks follow the Last-In-First-Out (LIFO) principle.
+
+Queues follow the First-In-First-Out (FIFO) principle.
+
+Maps (HashMap, TreeMap) store key-value pairs.
+
+Examples: To-do list using ArrayList, implementing a stack for undo functionality.
+
+Example (ArrayList):
+
+java
+Copy code
+import java.util.ArrayList;
+
+public class TodoList {
+    public static void main(String[] args) {
+        ArrayList<String> tasks = new ArrayList<>();
+
+        tasks.add("Task 1");
+        tasks.add("Task 2");
+        tasks.add("Task 3");
+
+        System.out.println("Tasks: " + tasks);
+    }
+}
+Example (Stack):
+
+java
+Copy code
+import java.util.Stack;
+
+public class StackExample {
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        int popped = stack.pop();
+        System.out.println("Popped element: " + popped);
+    }
+}

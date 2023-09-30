@@ -1,0 +1,5 @@
+Exercise: Implement a to-do list using an ArrayList to add, remove, and list tasks.
+
+Exercise: Create a program that simulates a stack for storing integers with push and pop operations.
+
+Exercise: Implement a simple queue to manage customers in a waiting line.

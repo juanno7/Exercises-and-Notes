@@ -1,0 +1,61 @@
+Unit Testing and Exception Handling
+
+Unit testing is the practice of testing individual units or methods of code.
+
+JUnit is a popular framework for Java unit testing.
+
+Exception handling prevents program crashes by gracefully handling errors.
+
+Common exceptions include NullPointerException and ArrayIndexOutOfBoundsException.
+
+Examples: Writing JUnit tests for a Calculator class, handling file not found exceptions.
+
+Example (JUnit Testing):
+
+java
+Copy code
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class CalculatorTest {
+    @Test
+    void testAddition() {
+        Calculator calculator = new Calculator();
+        int result = calculator.add(2, 3);
+        assertEquals(5, result);
+    }
+
+    @Test
+    void testDivision() {
+        Calculator calculator = new Calculator();
+        double result = calculator.divide(10, 2);
+        assertEquals(5.0, result);
+    }
+}
+Example (Exception Handling):
+
+java
+Copy code
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class FileHandling {
+    public static void main(String[] args) {
+        try {
+            File file = new File("example.txt");
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                System.out.println(scanner.nextLine());
+            }
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + e.getMessage());
+        }
+    }
+}
+
+
+These examples demonstrate the use of inheritance, polymorphism, unit testing, and exception handling in Java programming.
+
+Experiment with these concepts and explore more advanced features as you become more proficient in Java development.

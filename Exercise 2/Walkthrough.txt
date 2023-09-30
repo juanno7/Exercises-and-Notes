@@ -1,0 +1,29 @@
+Exercise: Write a Java program to check if a given number is even or odd.
+Walkthrough:
+
+Create a new Java class file, e.g., EvenOddChecker.java.
+Inside the class, add a public static void main(String[] args) method.
+Prompt the user to enter a number and read the input using Scanner.
+Use an if statement to check if the number is even or odd by using the modulus operator %.
+Print the result to the console.
+java
+Copy code
+import java.util.Scanner;
+
+public class EvenOddChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+
+        int number = scanner.nextInt();
+
+        scanner.close();
+
+        if (number % 2 == 0) {
+            System.out.println(number + " is even.");
+        } else {
+            System.out.println(number + " is odd.");
+        }
+    }
+}

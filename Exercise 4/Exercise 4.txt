@@ -1,0 +1,5 @@
+Exercise: Design a class representing a Person with attributes like name, age, and address, and create instances of this class.
+
+Exercise: Implement a simple banking system with classes like Account and Customer.
+
+Exercise: Create a class representing a geometric shape (e.g., circle, rectangle) with methods to calculate area and perimeter.

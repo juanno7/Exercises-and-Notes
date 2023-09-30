@@ -1,0 +1,53 @@
+Classes and Encapsulation
+
+
+
+Encapsulation hides the internal details of a class.
+
+Access modifiers (public, private, protected) control access to class members.
+
+Getter and setter methods provide controlled access to private fields.
+
+Encapsulation enhances code maintainability and security.
+
+Examples: Bank account class with private balance, getter and setter methods.
+
+
+Example (Bank Account Class):
+
+java
+Copy code
+public class BankAccount {
+    private double balance;
+
+    public BankAccount(double initialBalance) {
+        balance = initialBalance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+public class BankAccountDemo {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(1000.0);
+        account.deposit(500.0);
+        account.withdraw(200.0);
+
+        System.out.println("Account balance: $" + account.getBalance());
+    }
+}
+These additional examples demonstrate how to use objects, data structures, and encapsulation in Java programming. Practice these examples and adapt them to solve various programming challenges.

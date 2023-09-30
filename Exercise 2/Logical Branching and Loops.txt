@@ -1,0 +1,36 @@
+Logical Branching and Loops
+
+If-else statements allow conditional execution based on a condition.
+
+Switch statements provide a way to select among multiple code blocks.
+
+Loops like for and while allow repetitive execution.
+
+Examples: If-else for grading, switch for menu selection, while for iterative tasks.
+Example (If-else):
+
+java
+Copy code
+int score = 85;
+if (score >= 90) {
+    System.out.println("A");
+} else if (score >= 80) {
+    System.out.println("B");
+} else {
+    System.out.println("C");
+}
+Example (Switch):
+
+java
+Copy code
+int choice = 2;
+switch (choice) {
+    case 1:
+        System.out.println("Option 1 selected.");
+        break;
+    case 2:
+        System.out.println("Option 2 selected.");
+        break;
+    default:
+        System.out.println("Invalid option.");
+}

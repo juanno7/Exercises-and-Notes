@@ -1,0 +1,5 @@
+Logical branching allows you to make decisions in your code, enabling dynamic and conditional behavior.
+
+Loops are essential for repetitive tasks and allow you to iterate through data structures, files, and more.
+
+Conditional statements like if and loops like for are fundamental building blocks of control flow in Java.

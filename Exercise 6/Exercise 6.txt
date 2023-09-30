@@ -1,0 +1,5 @@
+ Exercise: Enhance the Person class from Week 4 by adding getter and setter methods for its attributes.
+
+Exercise: Design a class for a Library Book with encapsulated properties and methods for checking in and out.
+
+Exercise: Create a class representing a car with private properties and methods to start and stop the engine

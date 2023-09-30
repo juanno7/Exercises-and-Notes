@@ -1,0 +1,5 @@
+Exercise: Explore advanced topics based on your interests, such as creating a graphical user interface (GUI) using JavaFX.
+
+Exercise: Practice multithreading by creating a program that simulates concurrent tasks.
+
+Exercise: Work with file I/O to read and write data to files in different formats.

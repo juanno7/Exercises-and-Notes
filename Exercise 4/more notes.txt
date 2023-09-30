@@ -1,0 +1,5 @@
+Objects bundle data (attributes) and behaviors (methods) into a single unit.
+
+The class is a blueprint for creating objects; it defines their structure and behavior.
+
+Constructors are special methods used to initialize objects when they are created.

@@ -1,0 +1,5 @@
+Encapsulation is a core OOP concept that hides the internal implementation details of a class, promoting data security and code organization.
+
+Access modifiers (public, private, protected, default) control the visibility of class members.
+
+Getter and setter methods provide controlled access to class fields while maintaining encapsulation.

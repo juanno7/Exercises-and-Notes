@@ -1,0 +1,70 @@
+Exercise: Create a Java program that implements a simple calculator class. Write unit tests using JUnit to verify the correctness of its addition, subtraction, multiplication, and division methods. Handle exceptions for division by zero.
+Walkthrough:
+
+Create a new Java class file, e.g., Calculator.java, containing methods for addition, subtraction, multiplication, and division.
+Create a JUnit test class, e.g., CalculatorTest.java, and write test methods to validate each calculator operation.
+Use assertions to verify expected results and handle exceptions gracefully in your test methods.
+java
+Copy code
+// Calculator.java
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
+    public double divide(int a, int b) throws ArithmeticException {
+        if (b == 0) {
+            throw new ArithmeticException("Division by zero");
+        }
+        return (double) a / b;
+    }
+}
+java
+Copy code
+// CalculatorTest.java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class CalculatorTest {
+    @Test
+    void testAddition() {
+        Calculator calculator = new Calculator();
+        int result = calculator.add(2, 3);
+        assertEquals(5, result);
+    }
+
+    @Test
+    void testSubtraction() {
+        Calculator calculator = new Calculator();
+        int result = calculator.subtract(5, 3);
+        assertEquals(2, result);
+    }
+
+    @Test
+    void testMultiplication() {
+        Calculator calculator = new Calculator();
+        int result = calculator.multiply(4, 3);
+        assertEquals(12, result);
+    }
+
+    @Test
+    void testDivision() {
+        Calculator calculator = new Calculator();
+        double result = calculator.divide(10, 2);
+        assertEquals(5.0, result);
+    }
+
+    @Test
+    void testDivisionByZero() {
+        Calculator calculator = new Calculator();
+        assertThrows(ArithmeticException.class, () -> calculator.divide(5, 0));
+    }
+}

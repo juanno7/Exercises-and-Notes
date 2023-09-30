@@ -1,0 +1,5 @@
+ Exercise: Create a superclass Shape with subclasses like Circle and Rectangle that override a calculateArea method.
+
+Exercise: Implement an inheritance hierarchy for animals with classes like Animal, Bird, and Mammal.
+
+Exercise: Create an interface Drawable and implement it in multiple classes with different shapes.

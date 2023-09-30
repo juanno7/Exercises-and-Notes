@@ -1,0 +1,4 @@
+Unit testing is a software testing technique that verifies individual units (components) of a program.
+JUnit is a widely-used framework for writing and running Java unit tests.
+
+Exception handling involves handling unexpected errors or exceptional situations gracefully to prevent program crashes.

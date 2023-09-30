@@ -1,0 +1,41 @@
+Create a Java program that models a basic car with attributes like make, model, and year.
+Walkthrough:
+
+Create a new Java class file, e.g., Car.java.
+Inside the class, define private fields for make, model, and year.
+Create a constructor to initialize these fields when a new car object is created.
+Implement getter methods to retrieve the values of these fields.
+In the main method, create an instance of the Car class and set its attributes.
+Use the getter methods to display the car's details.
+java
+Copy code
+public class Car {
+    private String make;
+    private String model;
+    private int year;
+
+    public Car(String make, String model, int year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public static void main(String[] args) {
+        Car myCar = new Car("Toyota", "Camry", 2022);
+        System.out.println("Make: " + myCar.getMake());
+        System.out.println("Model: " + myCar.getModel());
+        System.out.println("Year: " + myCar.getYear());
+    }
+}

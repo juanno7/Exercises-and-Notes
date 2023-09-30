@@ -1,0 +1,7 @@
+Logical Branching and Loops
+
+Exercise: Write a Java program to check if a given number is even or odd.
+
+Exercise: Implement a calculator program with a menu that allows the user to perform addition, subtraction, multiplication, or division.
+
+Exercise: Create a program that generates a simple number guessing game with a while loop.

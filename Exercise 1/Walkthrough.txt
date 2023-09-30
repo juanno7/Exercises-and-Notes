@@ -1,0 +1,17 @@
+Exercise: Write a Java program to print "Hello, World!" to the console.
+Walkthrough:
+
+Open your preferred Java development environment (e.g., Eclipse, IntelliJ IDEA, or a simple text editor).
+Create a new Java class file, for example, HelloWorld.java.
+Inside the class, add a public static void main(String[] args) method. This is the entry point of your program.
+Within the main method, use the System.out.println statement to print "Hello, World!" to the console.
+Save the file.
+Compile the program by running javac HelloWorld.java in the terminal.
+Execute the program by running java HelloWorld.
+java
+Copy code
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}

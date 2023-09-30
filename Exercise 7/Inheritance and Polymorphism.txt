@@ -1,0 +1,46 @@
+Inheritance and Polymorphism
+
+Inheritance allows a new class (subclass) to inherit properties and behaviors from an existing class (superclass).
+
+Method overriding occurs when a subclass provides a specific implementation of a method defined in the superclass.
+
+Polymorphism allows objects of different classes to be treated as objects of a common superclass.
+
+Abstract classes and interfaces provide a blueprint for classes.
+
+
+Examples: Animal hierarchy with subclasses like Bird and Mammal.
+
+Example (Inheritance and Polymorphism):
+
+java
+Copy code
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Bird extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Bird sings");
+    }
+}
+
+class Mammal extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Mammal makes noise");
+    }
+}
+
+public class AnimalDemo {
+    public static void main(String[] args) {
+        Animal bird = new Bird();
+        Animal mammal = new Mammal();
+
+        bird.makeSound();
+        mammal.makeSound();
+    }
+}

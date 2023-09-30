@@ -1,0 +1,5 @@
+Exercise: Work on your project, applying the concepts learned in the previous weeks.
+
+Exercise: Write unit tests for the classes and methods in your project.
+
+Exercise: Document and organize your code effectively, following best practices.

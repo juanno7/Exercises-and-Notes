@@ -1,0 +1,5 @@
+ Exercise: Write JUnit tests for the Calculator class (from Week 2).
+
+Exercise: Implement a custom exception class for a specific error scenario in your program and handle it.
+
+Exercise: Create a program that reads a text file and handles potential exceptions like file not found.
