@@ -1,5 +1,0 @@
-Lists like ArrayList and LinkedList provide dynamic storage for collections of data, and they are widely used in Java.
-
-Stacks and queues are specialized data structures with specific access patterns, making them suitable for certain scenarios.
-
-Maps are used to store key-value pairs, enabling efficient data retrieval based on keys

@@ -1,0 +1,35 @@
+Step 1: Create the Account class
+
+Create a class called Account to represent a bank account. An account should have the following properties and methods:
+
+Properties:
+
+accountNumber (a unique identifier for each account)
+balance (the current balance of the account)
+Methods:
+
+deposit(double amount): Adds the specified amount to the account balance.
+withdraw(double amount): Subtracts the specified amount from the account balance, if sufficient funds are available.
+getBalance(): Returns the current balance of the account.
+Step 2: Create the Customer class
+
+Create a class called Customer to represent a bank customer. A customer should have the following properties and methods:
+
+Properties:
+
+customerId (a unique identifier for each customer)
+name (the name of the customer)
+accounts (a list of Account objects associated with the customer)
+Methods:
+
+addAccount(Account account): Adds an account to the customer's list of accounts.
+getAccounts(): Returns a list of accounts associated with the customer.
+getTotalBalance(): Calculates and returns the total balance across all customer accounts.
+Step 3: Create a Main Class
+
+Create a Main class with the main method to demonstrate the functionality of your banking system. In the main method, you can:
+
+Create instances of Account and Customer classes.
+Add accounts to customers.
+Deposit and withdraw money from accounts.
+Retrieve and display customer information, account information, and total balances.
