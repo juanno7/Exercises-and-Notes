@@ -4,36 +4,50 @@ Stacks and queues are specialized data structures with specific access patterns,
 
 A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. In a stack, the last element added is the first one to be removed. Here are some key characteristics and use cases:
 
-Operations: Stacks typically support two primary operations:
+Operations: 
+	Stacks typically support two primary operations:
 
-push(item): Adds an item to the top of the stack.
-pop(): Removes and returns the item from the top of the stack.
-Access Pattern: Stacks are well-suited for scenarios where you need to maintain a "last in, first out" order, such as managing function call execution in a programming language (call stack), backtracking in algorithms, and parsing expressions.
+push(item): 
+	Adds an item to the top of the stack.
 
-Implementation: Stacks can be implemented using arrays or linked lists.
+pop(): 
+	Removes and returns the item from the top of the stack.
 
-Example Usage: Checking for balanced parentheses in an expression, evaluating postfix expressions, and tracking the execution of recursive functions are common scenarios where stacks are used.
+Access Pattern: 
+	Stacks are well-suited for scenarios where you need to maintain a "last in, first out" order, such as managing function 	call execution in a programming language (call stack), backtracking in algorithms, and parsing expressions.
+
+Implementation: 
+	Stacks can be implemented using arrays or linked lists.
+
+Example Usage: 
+	Checking for balanced parentheses in an expression, evaluating postfix expressions, and tracking the execution of 	recursive functions are common scenarios where stacks are used.
 
 Queues:
-A queue is another linear data structure that follows the First-In-First-Out (FIFO) principle. In a queue, the first element added is the first one to be removed. Here are some key characteristics and use cases:
+	A queue is another linear data structure that follows the First-In-First-Out (FIFO) principle. In a queue, the first 	element added is the first one to be removed. Here are some key characteristics and use cases:
 
-Operations: Queues typically support two primary operations:
+Operations: 
+	Queues typically support two primary operations:
 
-enqueue(item): Adds an item to the back (or end) of the queue.
-dequeue(): Removes and returns the item from the front of the queue.
-Access Pattern: Queues are well-suited for scenarios where you need to maintain a "first in, first out" order, such as managing tasks in a print spooler, scheduling processes in an operating system, and handling requests in web servers.
+enqueue(item): 
+	Adds an item to the back (or end) of the queue.
 
-Implementation: Queues can be implemented using arrays or linked lists. Variations like priority queues and double-ended queues (deque) exist to cater to different requirements.
+dequeue(): 
+	Removes and returns the item from the front of the queue.
+	Access Pattern: Queues are well-suited for scenarios where you need to maintain a "first in, first out" order, such as 	managing tasks in a print spooler, scheduling processes in an operating system, and handling requests in web servers.
 
-Example Usage: Task scheduling, breadth-first search in graph algorithms, and managing the order of requests in computer networking are common scenarios where queues are used.
+Implementation:
+	Queues can be implemented using arrays or linked lists. Variations like priority queues and double-ended queues (deque) 	exist to cater to different requirements.
+
+Example Usage: 
+	Task scheduling, breadth-first search in graph algorithms, and managing the order of requests in computer networking are 	common scenarios where queues are used.
 
 Comparing Stacks and Queues:
-Stacks and queues are both useful in scenarios where you need to control the order of elements.
+	Stacks and queues are both useful in scenarios where you need to control the order of elements.
 
-Stacks are suitable for situations where the last-added item should be the first one processed.
+	Stacks are suitable for situations where the last-added item should be the first one processed.
 
-Queues are suitable for situations where the first-added item should be the first one processed.
+	Queues are suitable for situations where the first-added item should be the first one processed.
 
-Both data structures can be implemented using various underlying data structures, such as arrays and linked lists, depending on specific requirements.
+	Both data structures can be implemented using various underlying data structures, such as arrays and linked lists, 	depending on specific requirements.
 
 In summary, stacks and queues are fundamental data structures that find applications in a wide range of computer science and software engineering problems. Understanding their properties and access patterns is essential for designing efficient algorithms and systems.

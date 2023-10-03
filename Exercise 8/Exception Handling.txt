@@ -1,0 +1,54 @@
+What is Exception Handling?
+
+Exception handling is the process of dealing with unexpected or exceptional situations (exceptions) that may occur during the execution of a program.
+Exceptions can be caused by various events, such as runtime errors, invalid inputs, or external factors like network issues.
+
+Key Aspects of Exception Handling:
+
+Try-Catch Blocks: 
+	Exception handling typically involves using try-catch blocks. Code that might throw an exception is placed inside a try 	block, and the catch block is used to handle the exception if it occurs.
+
+Exception Types: 
+	Exceptions can be of different types, such as checked exceptions (compile-time exceptions) and unchecked exceptions (runtime 	exceptions). Checked exceptions must be explicitly handled, while unchecked exceptions do not need to be.
+
+Handling Strategies: 
+	Exception handling strategies include catching exceptions, logging errors, gracefully handling failures, and possibly 	recovering from errors.
+
+Throwing Exceptions: 	
+	Developers can also throw custom exceptions to indicate specific error conditions or to provide more meaningful error 	messages.
+
+Finally Block: 
+	The finally block is used to specify code that should be executed regardless of whether an exception was thrown or not. It's 	commonly used for cleanup tasks.
+
+Best Practices for Exception Handling:
+
+	Handle exceptions at an appropriate level in the application. Don't catch exceptions if you cannot handle them effectively.
+	Provide meaningful error messages in exception objects to aid in debugging and troubleshooting.
+	Log exceptions, but avoid exposing sensitive information in error messages.
+	Consider using exception hierarchies or custom exception classes to organize and categorize exceptions.
+
+
+
+
+
+Examples of Exception Handling in Java:
+
+java
+Copy code
+
+try {
+
+    // Code that might throw an exception
+   	 int result = divide(10, 0);
+
+} catch (ArithmeticException e) {
+
+    // Handling the exception
+    System.err.println("Division by zero: " + e.getMessage());
+
+} finally {
+
+    // Cleanup code (optional)
+
+}
+

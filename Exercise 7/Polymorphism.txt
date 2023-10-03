@@ -1,0 +1,63 @@
+Polymorphism:
+
+Definition: 
+	Polymorphism means "many forms." In OOP, it refers to the ability of a class to take on multiple forms, i.e., a subclass can 	be treated as its superclass. There are two main types of polymorphism:
+
+Compile-time (Static) Polymorphism: 
+	Achieved through method overloading and method overriding. The appropriate method is determined at compile time.
+
+Runtime (Dynamic) Polymorphism: 
+	Achieved through method overriding. The appropriate method is determined at runtime.
+
+
+
+Compile-time Polymorphism:
+
+Method Overloading: 
+	In the same class, you can have multiple methods with the same name but different parameter lists. The correct method is 	selected based on the arguments provided.
+
+Constructor Overloading: 
+	Similarly, you can have multiple constructors with different parameter lists.
+
+
+
+Runtime Polymorphism:
+
+Method Overriding: 
+	In a subclass, you can provide a specific implementation for a method defined in the superclass. When the method is called 	on an object of the subclass, the subclass's version is executed.
+
+Use of @Override: 
+	In Java, the @Override annotation is used to indicate that a method is intended to override a method in a superclass. It 	helps catch errors at compile time if the method signature doesn't match a superclass method.
+
+
+
+Benefits of Polymorphism:
+
+Code Flexibility: 
+	Allows for writing more flexible and reusable code.
+
+Abstraction: 
+	Enables working with objects at a higher level of abstraction.
+
+Example:
+
+	class Animal {
+
+    void sound() {
+        System.out.println("Some generic sound");
+    }
+}
+
+	class Cat extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println("Meow");
+    }
+}
+
+	Animal myPet = new Cat(); // Polymorphism: a Cat is treated as an Animal
+
+	myPet.sound(); // Output: "Meow" (Cat's version of sound() is executed)
+
+

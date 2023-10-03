@@ -21,18 +21,18 @@ initialize the object of the class you want to test
 
 @Test
 public void passingMethod(){
-a b = new a;
-boolean expectedResult = true;
-boolean actualResult = "same name as the class" or "a"."testmethod(input);
-Assert.assertEquald(expectedResult, actualResult);
+	a b = new a;
+	boolean expectedResult = true;
+	boolean actualResult = "same name as the class" or "a"."testmethod(input);
+	Assert.assertEquald(expectedResult, actualResult);
 
 }
 
 
 @Test
 public void failingMethod(){
-"object creation" aka a b = new a;
-boolean expectedResult = false;
-boolean actualResult = "a".passingmethod(input);
-Assert.assertEquals(expectedResult, actualResult);
+	"object creation" aka a b = new a;
+	boolean expectedResult = false;
+	boolean actualResult = "a".passingmethod(input);
+	Assert.assertEquals(expectedResult, actualResult);
 }

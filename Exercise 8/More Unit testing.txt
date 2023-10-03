@@ -1,0 +1,34 @@
+Unit Testing:
+What is Unit Testing?
+
+Unit testing is a software testing technique where individual components or units of code are tested in isolation to ensure that they work as expected.
+
+The "unit" in unit testing typically refers to the smallest testable part of a software application, such as a function, method, or class.
+Key Aspects of Unit Testing:
+
+Isolation: 
+	Unit tests should isolate the component being tested from the rest of the application. Any dependencies should be mocked or 	stubbed to ensure that the test focuses solely on the unit of code under examination.
+
+Automation: 
+	Unit tests are automated and can be executed frequently, often as part of a continuous integration (CI) or continuous 	delivery (CD) pipeline.
+
+Repeatable: 
+	Unit tests should produce consistent results regardless of the environment or platform in which they are run.
+
+Fast: 
+	Unit tests should be fast to execute, allowing developers to run them frequently during development without causing 	significant delays.
+
+Independent: 
+	Unit tests should not rely on the success or failure of other tests. They should be independent and self-contained.
+
+
+Benefits of Unit Testing:
+
+Early Detection of Bugs: 
+	Unit tests help catch bugs and issues early in the development process, reducing the cost of fixing them.
+
+Code Documentation: 
+	Well-written unit tests serve as documentation, describing how the code is expected to behave.
+
+Code Confidence: 
+	Unit tests provide confidence that code changes do not introduce regressions.

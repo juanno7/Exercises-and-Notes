@@ -1,0 +1,22 @@
+Classes:
+
+Blueprint for Objects: 
+	A class is like a blueprint or template for creating objects. It defines the structure and behavior that objects created 	from the class will have.
+
+Attributes (Fields): 
+	Classes can have attributes (also known as fields or properties), which represent the data or state associated with objects 	of that class. Attributes are typically declared as instance variables.
+
+Methods: 
+	Classes also define methods, which are functions or behaviors that objects of the class can perform. Methods operate on the 	attributes of the class and can be used to manipulate the object's state.
+
+Constructor: 
+	A constructor is a special method in a class that is called when an object of the class is created. It initializes the 	object's state and sets up any necessary resources.
+
+Encapsulation: 
+	Classes provide encapsulation, which is the concept of bundling data (attributes) and methods that operate on that data into 	a single unit. Encapsulation helps hide the internal implementation details of a class from external code.
+
+Inheritance: 
+	Inheritance is a key concept in OOP that allows one class (subclass or derived class) to inherit attributes and methods from 	another class (superclass or base class). It promotes code reuse and supports the "is-a" relationship between classes.
+
+Polymorphism: 
+	Polymorphism allows objects of different classes to be treated as objects of a common superclass. This enables code to work 	with objects at a higher level of abstraction and provides flexibility in implementing methods with different behaviors in 	subclasses.

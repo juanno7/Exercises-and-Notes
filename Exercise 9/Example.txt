@@ -27,6 +27,7 @@ Read and write inventory data to a file (e.g., a text file) for persistence.
 4. Introduction to Objects
 
 Exercise: Model a library system with classes for books, patrons, and library records. Implement methods for borrowing and returning books, as well as tracking due dates.
+
 Walkthrough:
 
 Create Java class files for Book, Patron, and LibraryRecord.

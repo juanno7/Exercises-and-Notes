@@ -1,0 +1,34 @@
+Encapsulation:
+
+Access Control: 
+	Encapsulation enforces access control on the attributes and methods of a class. It defines who can access and modify the 	data and behaviors of an object.
+
+Access Modifiers: 
+	Access modifiers (e.g., public, private, protected, default) are used to specify the level of visibility and accessibility 	of class members (attributes and methods).
+
+public: 
+	Members are accessible from any class.
+
+private: 
+	Members are only accessible within the same class.
+
+protected: 
+	Members are accessible within the same class and its subclasses.
+
+default (no modifier): 
+	Members are accessible within the same package (package-private).
+
+Getter and Setter Methods: 
+	To control access to attributes, it's common to provide getter (accessor) and setter (mutator) methods. Getter methods 	allow reading the value of an attribute, while setter methods allow modifying it. This allows for controlled access and 	validation of attribute values.
+
+Information Hiding: 
+	Encapsulation hides the internal details of how a class is implemented. This makes it possible to change the internal 	implementation without affecting the code that uses the class.
+
+Data Integrity: 
+	Encapsulation allows you to enforce data integrity by providing controlled access to attributes. You can add validation 	logic in setter methods to ensure that attribute values meet specific criteria.
+
+Maintainability: 
+	Encapsulation promotes code maintenance by encapsulating related functionality and reducing the likelihood of unintended 	side effects when modifying a class.
+
+Security: 
+	By limiting access to sensitive data and methods, encapsulation enhances security in your programs
