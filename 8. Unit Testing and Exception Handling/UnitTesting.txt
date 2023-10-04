@@ -24,7 +24,7 @@ public void passingMethod(){
 	a b = new a;
 	boolean expectedResult = true;
 	boolean actualResult = "same name as the class" or "a"."testmethod(input);
-	Assert.assertEquald(expectedResult, actualResult);
+	Assert.assertEquals(expectedResult, actualResult);
 
 }
 

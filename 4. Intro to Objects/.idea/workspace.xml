@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c1cf69a-e85f-415c-9d92-4a7ef32b4f4a" name="Changes" comment="" />
+    <list default="true" id="a0f4fb75-fe03-49e5-95ab-3da0b24f2c73" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Exercise 4/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise 4/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise 4/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise 4/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise 4/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise 4/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise 4/src/main/java/org/example/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise 4/src/main/java/org/example/Bank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise 4/src/main/java/org/example/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Arrays and Command-Lines/Exercise_3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../3. Arrays and Command-Lines/Exercise_3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Exercise 4.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/Bank.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/Customer.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,10 +37,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
-  <component name="ProjectId" id="2WDqwBV29lK4OgYbp0Vu1j0lLgh" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2WGjWwwez3OSO8cRuB86dookBGU" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -23,20 +50,17 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/parra/OneDrive/Desktop/Notes/Exercises/Exercise 4",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "last_opened_file_path": "C:/Users/parra/OneDrive/Desktop/Notes/Exercises/8. Unit Testing and Exception Handling"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2c1cf69a-e85f-415c-9d92-4a7ef32b4f4a" name="Changes" comment="" />
-      <created>1696277734854</created>
+      <changelist id="a0f4fb75-fe03-49e5-95ab-3da0b24f2c73" name="Changes" comment="" />
+      <created>1696365845712</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1696277734854</updated>
+      <updated>1696365845712</updated>
     </task>
     <servers />
   </component>
