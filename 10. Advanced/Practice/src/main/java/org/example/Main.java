@@ -31,7 +31,7 @@ public class Main {
         System.out.println(input);
         System.out.println(reverse);
 
-        String in = "a man, a plan, a canal, panama";
+        String in = "A man, a plan, a canal, panama";
         boolean result = isPalindrome(in);
 
         if (result) {
@@ -173,7 +173,7 @@ public class Main {
             int mid = left + (right - left) / 2;
             if(num[mid] == target){
                 return mid;
-            } else if(num[mid] < right){
+            } else if(num[mid] < target){
                 left = mid + 1;
             } else {
                 right = mid - 1;
