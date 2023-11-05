@@ -1,0 +1,25 @@
+Mapping method
+The mapping method takes a SqlRowSet as its single argument. It creates a new instance of the model, sets the instance attributes with database values from the current row in the row set, and returns the fully instantiated object:
+
+// JdbcAuthorDao.java
+private Author mapRowToAuthor(SqlRowSet results) {
+    Author author = new Author();
+    author.setAuthorId(results.getInt("author_id"));
+    author.setFirstName(results.getString("first_name"));
+    author.setLastName(results.getString("last_name"));
+    return author;
+}
+
+// JdbcBookDao.java
+private Book mapRowToBook(SqlRowSet results) {
+    Book book = new Book();
+    book.setBookId(results.getInt("book_id"));
+    book.setTitle(results.getString("title"));
+    book.setAuthorId(results.getInt("author_id"));
+    book.setPrice(results.getBigDecimal("price"));
+    if (results.getDate("publish_date") != null) {
+        book.setPublishDate(results.getDate("publish_date").toLocalDate());
+    }
+    book.setOutOfPrint(results.getBoolean("out_of_print"));
+    return book;
+}

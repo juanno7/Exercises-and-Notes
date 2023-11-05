@@ -1,0 +1,54 @@
+Single parameter
+A typical DAO method is one that retrieves a record for a given ID, usually the primary key. Take this query for example:
+
+SELECT book_id, author_id, title, price, publish_date, out_of_print
+FROM book
+WHERE book_id = 3;
+The query retrieves only a single row. A user of your application is probably interested in looking up any book in the database, not only the one with ID 3. You need to make the book_id a SQL argument so you can assign it a dynamic value:
+
+WHERE book_id = ?;
+A ? is a placeholder that indicates you want it replaced with a value that you'll provide later.
+
+Where does the value come from? It might come from user input or some other process outside of the DAO method. Regardless of the source, it gets passed into a DAO method as a parameter:
+
+// JdbcBookDao.java
+public Book getBookById(int bookId) {
+
+}
+The placeholder value in this case is the parameter passed into the method—bookId.
+
+To use the value in your SQL query, you pass it as another parameter to queryForRowSet():
+
+String sql = "SELECT book_id, author_id, title, price, " +
+            "publish_date, out_of_print FROM book " +
+            "WHERE book_id = ?;";
+
+// the *second* parameter for queryForRowSet() is the placeholder value
+
+SqlRowSet results = jdbcTemplate.queryForRowSet(sql, bookId);
+When JDBC sends the query to the server, it replaces the ? with the value of bookId.
+
+Time to see the method put all together. Notice that since you're only expecting one book from the query, the return type of this method is Book and not List<Book> like the previous examples:
+
+// JdbcBookDao.java
+public Book getBookById(int bookId) {
+    Book book = null; // declare and initialize return value
+
+    String sql = "SELECT book_id, author_id, title, price, " +
+            "publish_date, out_of_print FROM book " +
+            "WHERE book_id = ?;"; // sql query with placeholder
+
+    // the *second* parameter for queryForRowSet() is the placeholder value
+    SqlRowSet results = jdbcTemplate.queryForRowSet(sql, bookId);
+
+    if (results.next()) {
+        // Only expect one book, so only `if (results.next())` is necessary
+        book = mapRowToBook(results); // map result to return value
+    }
+
+    return book;
+}
+
+Note: Parameters are for data only
+SQL parameters are only used for data. You can't use them to specify a table or column name.
+

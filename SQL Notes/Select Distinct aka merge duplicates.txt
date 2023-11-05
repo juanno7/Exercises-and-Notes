@@ -1,0 +1,31 @@
+SELECT DISTINCT
+The keyword SELECT retrieves all rows from a selected table without regard for duplicates. In other words, SELECT returns all rows from a table even if some of those rows are identical. See the following example, in which a query requesting continents lists each continent multiple times—once for each time it appears in the country table:
+
+SELECT continent FROM country;
+Result:
+
+continent
+North America
+South America
+Oceania
+North America
+Africa
+North America
+North America
+South America
+...
+
+Sometimes you want a list of values in your table without regard for how many times each value appears. In these circumstances, use the keyword DISTINCT to modify the SELECT clause. By only retrieving unique values from the selected table SELECT DISTINCT generates a table of unique results.
+
+The following query is like the previous example, but uses SELECT DISTINCT instead of SELECT. Note that the results list each continent a single time, regardless of how many times it appears in the country table:
+
+SELECT DISTINCT continent FROM country;
+Result:
+
+continent
+North America
+South America
+Oceania
+Africa
+Europe
+Asia

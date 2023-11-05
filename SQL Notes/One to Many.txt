@@ -1,0 +1,5 @@
+One-to-Many
+In the earlier example, the relationship between a city and a country is a one-to-many relationship. It can be expressed as, "A city is in only one country, and a country has many cities."
+
+
+Primary keys must be unique, but foreign keys don't have to be. Having a country_id on city means that many cities can have the same country. If you put a city_id on the country table, then a country could only have one city per row, which isn't what you want. So, because it's one country having many cities, you put the foreign key to country on the city table.

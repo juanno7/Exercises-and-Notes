@@ -1,0 +1,49 @@
+A model class typically only contains attributes that match columns in the table it represents, though it may also have additional attributes and methods depending on application requirements.
+
+For example, the author table has author_id, first_name, and last_name columns. As a result, the Author model class has three attributes, authorId, firstName, and lastName, along with the getters and setters for each attribute, and a toString() method:
+
+// Author.java
+package com.bookstore.model;
+
+public class Author {
+
+    // Private attributes that correspond to columns
+    private int authorId;
+    private String firstName;
+    private String lastName;
+
+    // public getters/setters omitted for space
+
+    // Not required, but toString() override frequently added as a convenience
+    @Override
+    public String toString() {
+        return "Author{" +
+                "authorID=" + authorId +
+                ", firstName='" + firstName + "'" +
+                ", lastName='" + lastName + "'" +
+                "}";
+    }
+}
+
+
+The Book model class follows a similar pattern in terms of the correspondence between table columns and model attributes:
+
+// Book.java
+package com.bookstore.model;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+public class Book {
+
+    // Private attributes that correspond to columns
+    private int bookId;
+    private String title;
+    private int authorId;
+    private BigDecimal price;
+    private LocalDate publishDate;
+    private boolean outOfPrint;
+
+    // public getters/setters omitted for space
+    // toString() override omitted for space
+}

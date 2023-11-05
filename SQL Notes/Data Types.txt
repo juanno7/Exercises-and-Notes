@@ -1,0 +1,13 @@
+
+Type				Used for				Examples
+
+INTEGER	fields to 	contain whole numbers			  a counter or quantity
+
+NUMERIC
+or DECIMAL		fields to contain decimal values	  a weight or temperature
+
+VARCHAR			fields to contain text			  a name or description
+
+DATE			fields to contain a date, but no time	  a birthday or expiration date
+
+TIMESTAMP		fields to contain a date and time	  a calendar appointment or log event

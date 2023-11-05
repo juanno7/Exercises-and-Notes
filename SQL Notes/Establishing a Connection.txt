@@ -1,0 +1,19 @@
+jdbc:postgresql://SERVER_NAME:PORT/DATABASE_NAME
+
+This may look complicated, but it's made of several smaller components:
+
+jdbc:postgresql: Identifies this is a JDBC connection string and that it's connecting to a PostgreSQL server.
+
+SERVER_NAME: The host name or IP address of the database server. While working in development, this is often localhost which means it's running on the same computer that you're writing your code on.
+
+PORT: The port number of the database server. The port number is optional if PostgreSQL is using the default port of 5432.
+
+DATABASE_NAME: The name of the database on the server.
+
+For example, to connect to a database named bookstore on localhost and port 5432, the connection string looks like this:
+
+jdbc:postgresql://localhost:5432/bookstore
+
+Since it uses the default port, you could also write the connection string as:
+
+jdbc:postgresql://localhost/bookstore

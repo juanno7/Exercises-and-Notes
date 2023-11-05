@@ -1,0 +1,19 @@
+The LIKE conditional
+
+LIKE is a special conditional that only works with character data. It allows for "wildcard" searches. Look at the following SQL statement:
+
+-- Get all last names that end in son
+
+SELECT last_name FROM person WHERE last_name LIKE '%son';
+This statement returns all rows where the last_name ends in son. The % is called a wildcard. It matches anything, so the preceding statement returns names like Erickson, Benson, and Danielson, but it won't return sonny or Wilsonn. The string must end in son because the % is at the beginning.
+
+If you want to only get rows where the last_name begins with Ba, write the following:
+
+-- Get all last names that begin with Ba
+
+SELECT last_name FROM person WHERE last_name LIKE 'Ba%';
+If you want to only get rows where the last_name has the string ski anywhere in it, including having the string start with or end with ski, write the following:
+
+-- Get all last names that contain ski anywhere
+
+SELECT last_name FROM person WHERE last_name LIKE '%ski%';

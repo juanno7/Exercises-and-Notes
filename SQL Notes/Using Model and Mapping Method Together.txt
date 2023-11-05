@@ -1,0 +1,20 @@
+Using the model and the mapping method together
+Now that the models and mappers are in place, see how they're used in the while loop iterating through the SqlRowSet:
+
+// JdbcAuthorDao.java - getAuthors()
+String sql = "SELECT author_id, first_name, last_name FROM author;";
+SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+
+while (results.next()) {
+    Author author = mapRowToAuthor(results); // map a row to model. Uses the method created in "Mapping Method" note
+
+}
+
+// JdbcBookDao.java - getBooks()
+String sql = "SELECT book_id, author_id, title, price, " +
+                "publish_date, out_of_print FROM book;";
+SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+
+while (results.next()) {
+    Book book = mapRowToBook(results); // map a row to model
+}

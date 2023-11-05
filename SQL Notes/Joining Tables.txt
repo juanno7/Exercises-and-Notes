@@ -1,0 +1,53 @@
+Joining tables
+
+You can write the previous query using a JOIN clause as well:
+
+SELECT city.name FROM city
+JOIN country ON country.country_id = city.country_id
+WHERE country.name='France';
+You can use JOIN clauses to join up the rows of one table to the rows of another table, essentially giving you a combined row of information that you can then select from.
+
+Look again at the earlier JOIN clause:
+
+FROM city JOIN country ON country.country_id = city.country_id
+That clause gives you rows that look like this:
+
+city_id	country_id	name		country_id	name
+
+1	6		Milan		6		Italy
+2	6		Rome		6		Italy
+3	7		Beijing		7		China
+4	4		Nice		4		France
+5	4		Paris		4		France
+6	1		Toronto		1		Canada
+7	5		Seville		5		Spain
+
+You've joined the two tables together where the city.country_id = country.country_id. You can see that the country can be duplicated, like for Milan and Rome, because more than one city has the same country.
+
+Then you can select your columns from this new joined table. Since both city and country have a name column, you have to specify which name column you want in the SELECT clause:
+
+SELECT city.name FROM city
+JOIN country ON country.country_id = city.country_id
+Then, you only want the rows that have 'France' in the country:
+
+SELECT city.name FROM city
+JOIN country ON country.country_id = city.country_id
+WHERE country.name = 'France';
+That clause gives you these rows:
+
+name
+
+Nice
+Paris
+
+You could also change that statement to this:
+
+SELECT CONCAT(city.name, ', ', country.name) AS display_name FROM city
+JOIN country ON country.country_id = city.country_id
+WHERE country.name = 'France';
+
+This is the result:
+
+display_name
+Nice, France
+Paris, France

@@ -6,8 +6,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Main main = new Main();
-        //main.run();
+
         int[] arr = {4, 9, 2, 3, 1, 5, 9, 9};
         int[] num = {4, 5, 2, 7, 8, 9};
 //        bubbleSort(arr);

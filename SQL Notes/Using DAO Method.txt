@@ -1,0 +1,55 @@
+DAO method
+So far the examples you've seen haven't shown the full DAO method, because you needed to learn about the model and mapper first. The final piece of the puzzle is the return values. This is nothing new—intialize a return value, assign to it, and return it. Besides the method declaration, there are only three new lines from the preceding examples:
+
+// JdbcAuthorDao.java
+public List<Author> getAuthors() {
+    List<Author> authors = new ArrayList<>(); // declare and initialize return value
+
+    String sql = "SELECT author_id, first_name, last_name FROM author;";
+    SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+
+    while (results.next()) {
+        Author author = mapRowToAuthor(results);
+        authors.add(author); // add mapped result to collection
+    }
+
+    return authors; // return collection
+
+}
+
+
+// JdbcBookDao.java
+public List<Book> getBooks() {
+    List<Book> books = new ArrayList<>(); // declare and initialize return value
+
+    String sql = "SELECT book_id, author_id, title, price, " +
+                    "publish_date, out_of_print FROM book;";
+    SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+
+    while (results.next()) {
+        Book book = mapRowToBook(results);
+        books.add(book); // add mapped values to collection
+    }
+
+    return books; // return collection
+
+}
+
+
+And calling the methods is just like any other method:
+
+// BookstoreApp.java
+private void run() {
+
+    // Create an instance of JdbcAuthorDao, passing in dataSource
+    JdbcAuthorDao authorDao = new JdbcAuthorDao(dataSource);
+
+    // Create an instance of JdbcBookDao, passing in dataSource
+    JdbcBookDao bookDao = new JdbcBookDao(dataSource);
+
+    List<Author> authors = authorDao.getAuthors();
+    List<Book> books = bookDao.getBooks();
+}
+
+
+

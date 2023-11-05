@@ -1,0 +1,1 @@
+SELECT statment WHERE row IN ( data, data, data );

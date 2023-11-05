@@ -1,0 +1,84 @@
+Joining multiple tables
+Think back to the actors and films example. From that example, imagine that you have an actor table that looks like this:
+
+actor
+
+actor_id	name
+1		Brad Pitt
+2		Bruce Willis
+3		Chris Evans
+4		Alan Rickman
+5		Ed Norton
+6		Tom Cruise
+
+And film:
+
+film
+
+film_id		name
+1		Die Hard
+2		Fight Club
+3		Moonrise Kingdom
+4		12 Monkeys
+
+And, finally, the join table, actor_film:
+
+actor_film
+
+actor_id	film_id
+2		1
+4		1
+5		2
+1		2
+5		3
+2		3
+1		4
+2		4
+
+Using this table, you can pull information about both actors and films by joining the tables together. If you wanted to get the name and all of the films from actors whose names start with 'B', you'd do the following:
+
+SELECT actor.name, film.name FROM actor
+JOIN actor_film ON actor_film.actor_id = actor.actor_id
+JOIN film ON film.film_id = actor_film.film_id
+WHERE actor.name LIKE 'B%';
+
+name		name
+
+Brad Pitt	Fight Club
+Brad Pitt	12 Monkeys
+Bruce Willis	Die Hard
+Bruce Willis	Moonrise Kingdom
+Bruce Willis	12 Monkeys
+
+You'll see that a lot of the values were duplicated, but each combination is unique. As the database joins the rows of different tables to each other, it creates as many rows as need to join all of the information.
+
+When you select from actor, you only get two rows: Brad Pitt and Bruce Willis. But then you join the actor_film table on and the film table. Since Brad Pitt has been in two of the films, his name is attached to both of those rows and the value is duplicated. But that's okay. Each row has all the information you need from that call.
+
+However, if you want to know how many movies each actor has been in, you'd need to write a different query.
+
+First, you'd need to pull data from the actor table and join that to the film table:
+
+FROM actor
+JOIN actor_film ON actor_film.actor_id = actor.actor_id
+JOIN film ON film.film_id = actor_film.film_id
+You want to count the films, so if you group the rows by the actor, you can COUNT the number of films for each actor:
+
+FROM actor
+JOIN actor_film ON actor_film.actor_id = actor.actor_id
+JOIN film ON film.film_id = actor_film.film_id
+GROUP BY actor.actor_id, actor.name
+And then you can select the actor's name and how many rows were returned for that actor:
+
+SELECT actor.name, COUNT(*) AS num_of_films
+FROM actor
+JOIN actor_film ON actor_film.actor_id = actor.actor_id
+JOIN film ON film.film_id = actor_film.film_id
+GROUP BY actor.actor_id, actor.name
+
+name		num_of_films
+Brad Pitt	2
+Bruce Willis	3
+Alan Rickman	1
+Ed Norton	2
+
+Notice that Tom Cruise doesn't appear in the results. This is because he isn't linked in the database to any films. Since he isn't joined to any films, when you join the actor_film table in, his name disappears from the list. The same happens with Chris Evans.

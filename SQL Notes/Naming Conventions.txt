@@ -1,0 +1,13 @@
+Database naming conventions
+
+You might wonder how to come up with these names for your tables and their rows. It's not random, but it's also not something set in stone either. Wherever you end up, the company most likely has a naming convention that they already follow.
+
+The convention this book uses has the following features:
+
+Tables usually relate to some object that you have in your application, like a city and a country. Table names are singular (city instead of cities), and "snake-cased"—meaning all lowercase letters, with words separated by underscore (as in actor_film).
+
+Primary keys are usually integers and are usually named as (tablename)_id, as in city_id as the primary key for the city table.
+Foreign keys usually have the same name as their matching primary key, which inherently states which table it comes from.
+
+Join tables are the two table names concatenated together with a _ in the middle, with the names arranged alphabetically, like actor_film and not film_actor.
+Again, these aren't requirements, and you could see databases set up much differently than this. It's better to understand the concepts than to memorize the naming.

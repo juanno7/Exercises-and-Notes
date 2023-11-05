@@ -1,0 +1,25 @@
+To add a row, use an INSERT statement:
+
+INSERT INTO country (code, name, continent, region)
+VALUES ('HND', 'Honduras', 'North America', 'Central America');
+This creates a new row in your country table and fills in the column of that row with these values:
+
+SELECT * FROM country WHERE continent = 'North America';
+Result:
+
+code	name	        continent	region
+HND	Honduras	North America	Central America
+CYM	Cayman Islands	North America	Caribbean
+...	...		...	        ...
+
+This is the syntax for an INSERT statement:
+
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+Tip: The columns are optional, but use them
+Technically, the column list is optional in an INSERT statement, and the database assumes that your VALUES are in the same order that the columns were defined in when the table was created. How do you know what that order is?
+
+There are ways of looking it up, but it's best to list out the columns. There's a chance that the columns are in a different order on development versus production and it reduces ambiguity. List out the columns in the INSERT statement so you don't have to worry about it.
+
+Remember: It pays to be explicit.

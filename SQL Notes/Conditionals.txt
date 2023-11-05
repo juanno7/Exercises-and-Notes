@@ -1,0 +1,21 @@
+Conditionals
+Specifying conditionals in WHERE clauses narrows down which rows to select from the database. Much like a conditional in an if statement, the WHERE clause conditional only selects rows where the conditional evaluates to true.
+
+All of the standard conditionals that you already know—like =, <, >—are also available in SQL. There are some new ones too:
+
+Operator	Numbers	                Characters
+=	       Equal To	                Equal To
+<>, !=	       Not Equal To	        Not Equal To
+<	       Less Than	        Alphabetically Before
+>	       Greater Than	        Alphabetically After
+<=	       Less Than or Equal	Alphabetically Before or Equal
+>=	       Greater Than or Equal	Alphabetically After or Equal
+IN (value1, value2, ...)	Is Value in List	Is Value in List
+BETWEEN value1 AND value2	Is Value Greater Than or Equal to value1 and Less Than or Equal to value2	Is Value Greater Than or Equal to value1 and Less Than or Equal to value2
+IS NULL	Equal To Null	Equal To Null
+IS NOT NULL	Not Equal To Null	Not Equal To Null
+LIKE '%value1%'	N/A	Contains value1
+
+
+Note: NULL value in SQL
+NULL has a different meaning in SQL than in other programming languages. In OOP languages such as Java, NULL means that a variable doesn't contain an object. In SQL, NULL means that a value hasn't been set on the column when the row was submitted. So a column is NULL if it doesn't have a value. For example, if you have a table of people and need to put Madonna or Cher in the table, the last_name column for those rows is NULL.

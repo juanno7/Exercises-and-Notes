@@ -1,0 +1,68 @@
+SELECT statements
+To begin, you'll learn how to select data from a database. This is one of the main types of statements you'll use when developing a typical business application.
+
+For these examples, assume that you have a database table that looks like this:
+
+Sample table
+
+
+code	name	                 continent	   region
+CYM	Cayman Islands	        North America	  Caribbean
+CHL	Chile	                South America	  South America
+COK	Cook Islands	        Oceania	          Polynesia
+CRI	Costa Rica	        North America	  Central America
+DJI	Djibouti	        Africa	Eastern   Africa
+DMA	Dominica	        North America	  Caribbean
+DOM	Dominican Republic	North America	  Caribbean
+ECU	Ecuador	South America	South America
+
+
+
+In this database, the table would have a name. Here, it's called the country table. If you want to get the names of all the countries in the country table, you'd run the following statement:
+
+SELECT name FROM country;
+Result:
+
+name
+Cayman Islands
+Chile
+Cook Islands
+Costa Rica
+Djibouti
+Dominica
+Dominican Republic
+Ecuador
+...
+
+This is a SELECT statement. All SELECT statements start with the keyword SELECT followed by the name of the column from which you want to retrieve data. After that's the FROM keyword, which specifies the table from which you want to retrieve the data. The database returns the value in the name column of every row in the country table.
+
+You can select more than one column from the table by separating each column name with a comma, as the following shows:
+
+SELECT name, continent FROM country;
+Result:
+
+name	continent
+Cayman Islands	North America
+Chile	South America
+Cook Islands	Oceania
+Costa Rica	North America
+Djibouti	Africa
+Dominica	North America
+Dominican Republic	North America
+Ecuador	South America
+...	...
+
+There is also a shortcut for selecting all the columns of a table. That shortcut is to use the * symbol, which means all:
+
+SELECT * FROM country;
+Result:
+
+code	name	                 continent	   region
+CYM	Cayman Islands	        North America	  Caribbean
+CHL	Chile	                South America	  South America
+COK	Cook Islands	        Oceania	          Polynesia
+CRI	Costa Rica	        North America	  Central America
+DJI	Djibouti	        Africa	Eastern   Africa
+DMA	Dominica	        North America	  Caribbean
+DOM	Dominican Republic	North America	  Caribbean
+ECU	Ecuador	South America	South America
