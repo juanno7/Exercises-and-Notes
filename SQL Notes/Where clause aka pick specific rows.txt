@@ -4,6 +4,7 @@ SELECT * FROM country WHERE continent = 'North America';
 Result:
 
 code	name	                continent	   region
+
 CYM	Cayman Islands	        North America	   Caribbean
 CRI	Costa Rica	        North America	   Central America
 DMA	Dominica	        North America	   Caribbean
