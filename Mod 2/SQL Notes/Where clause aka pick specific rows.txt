@@ -1,0 +1,17 @@
+There are times when you don't want to select all the rows stored in a table. If you want to pick and choose which rows to pull back from the database, you need to use a WHERE clause:
+
+SELECT * FROM country WHERE continent = 'North America';
+Result:
+
+code	name	                continent	   region
+
+CYM	Cayman Islands	        North America	   Caribbean
+CRI	Costa Rica	        North America	   Central America
+DMA	Dominica	        North America	   Caribbean
+DOM	Dominican Republic	North America	   Caribbean
+...	...	...	...
+
+In defining a WHERE clause, you only extract the rows you want from the database. In this example, the database pulls rows where the data in continent is equal to 'North America.'
+
+Note: Equality in SQL
+In Java, you use double equals to see if two things are equal. In SQL, you use one equal.

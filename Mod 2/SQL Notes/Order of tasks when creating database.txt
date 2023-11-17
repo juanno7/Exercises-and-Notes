@@ -1,0 +1,9 @@
+Identify the entities to be represented by tables
+
+Determine how the tables are related
+
+Finalize table designs with specific data types and sizes
+
+Write and run DDL statements to create tables
+
+Run SQL INSERT statements to populate tables with data

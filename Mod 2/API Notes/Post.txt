@@ -1,0 +1,34 @@
+POST requests
+The syntax for making a POST request with an object is similar to the syntax for making a GET request with type parameters. With POST requests, there's one additional step: attaching the data to the request.
+
+In the following example, you create a new User object and add it to the request using an HttpEntity, which combines the User object with the HTTP header Content-Type=application/json:
+
+User newUser = new User();
+newUser.setFirstName("Fred");
+newUser.setLastName("Smith");
+newUser.setEmail("fred@example.com");
+
+// Create instance of RestTemplate
+
+RestTemplate restTemplate = new RestTemplate();
+
+// Create instance of HttpHeaders and set Content-Type to application/json
+
+HttpHeaders headers = new HttpHeaders();
+headers.setContentType(MediaType.APPLICATION_JSON);
+
+// Combine headers with new user object to form HttpEntity
+
+HttpEntity<User> entity = new HttpEntity<>(newUser, headers);
+
+// Post (add) the new user using the entity.
+
+User returnedUser = restTemplate.postForObject(API_URL + "users", entity, User.class);
+
+It's important to note the third parameter in the method call, restTemplate.postForObject(..., ..., User.class). The postForObject() method returns the newly posted object and uses the third parameter as a template to deserialize the returned JSON. In this case, since a User object was posted, you'd expect the returned object to be of type User, so the method is passed the User.class as the template.
+
+Note: 
+
+About .class
+A class name, like User followed by .class, is called a class literal in Java. It's a way to programmatically refer to the underlying structure of a class so that the serializer or deserializer can map JSON values to the corresponding object attributes.
+

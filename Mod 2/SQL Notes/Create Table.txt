@@ -1,0 +1,44 @@
+CREATE TABLE
+
+The CREATE TABLE statement adds new tables to a database.
+
+The first thing to include in a CREATE TABLE statement is the name of the new table. For example, if you were setting up a table to hold data about cities, you would start with:
+
+CREATE TABLE city ();
+Next, in the parentheses following the table name, you'll add a list of fields, specifying the name and data type for each. For the data types that require parameters, put those in parentheses following the type. For the table of cities, that might look like this:
+
+CREATE TABLE city (
+    city_id serial, --This is a PostgreSQL specific data type for auto-incrementing ints
+    city_name varchar(50),
+    population int,
+    area numeric(5,1)
+);
+
+Finally, add constraints. A constraint that applies to a single field—like NOT NULL—is often specified immediately after the data type:
+
+CREATE TABLE city (
+    city_id serial,
+    city_name varchar(50) NOT NULL,
+    population int NOT NULL,
+    area numeric(5,1) NOT NULL
+);
+
+Constraints can also be added separately to the list of fields. For example, you can add the PRIMARY KEY constraint—which includes the NOT NULL and UNIQUE constraints—like this:
+
+CREATE TABLE city (
+    city_id serial,
+    city_name varchar(50) NOT NULL,
+    population int NOT NULL,
+    area numeric(5,1) NOT NULL,
+    CONSTRAINT PK_city PRIMARY KEY(city_id)
+);
+
+Note: Constraint names
+Constraints can be named, which makes them easier to refer to. A common naming convention is to use a prefix that indicates the type of constraint followed by the names of the tables or fields affected by the constraint. For example:
+
+PK_customer would be a PRIMARY KEY constraint on the customer table.
+
+FK_invoice_customer would be a FOREIGN KEY constraint on the invoice table that relates it to the customer table.
+
+UQ_name would be a UNIQUE constraint on the name field.
+

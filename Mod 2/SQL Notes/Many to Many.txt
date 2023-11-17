@@ -1,0 +1,12 @@
+Many-to-Many
+But sometimes you want both sides of the relationship to be many. For example, if you want to model films and actors, you'd have a many-to-many relationship. You'd say, "An actor can be in many films, and a film can have many actors."
+
+The question now is where the foreign key goes. If you put it on the film table, then a film could only have one actor. If you put it on the actor table, then an actor could only be in one film. Neither of those scenarios is what you want.
+
+If you don't want the foreign key on the film table and you don't want it on the actor table, you must put it in its own table.
+
+Actors and Films
+
+That actor_film table is a join table or an associative table. It's a required technique to join two tables together in a many-to-many relationship.
+
+In the example, you still have primary keys on the actor and film tables, but then you put the foreign keys onto a new table called actor_film. So the actor_film table can have many rows with the same actor and many rows with the same film. This satisfies the need to link the actor and film tables together in a many-to-many relationship.

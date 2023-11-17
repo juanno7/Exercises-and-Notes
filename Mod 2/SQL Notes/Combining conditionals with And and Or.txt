@@ -1,0 +1,12 @@
+Combining conditionals with AND and OR
+
+You can put conditionals together in a SELECT statement to get the rows you want.
+
+For example, if you have a person table and want to get all the rows that represent children, you could write a statement like this:
+
+-- Select all children from the database
+SELECT first_name, last_name FROM person WHERE age < 18;
+You can also combine these conditionals using the keywords AND and OR to make more complex statements:
+
+-- Select all the first names of children with a last name of Smith from the database
+SELECT first_name FROM person WHERE age < 18 AND last_name = 'Smith';

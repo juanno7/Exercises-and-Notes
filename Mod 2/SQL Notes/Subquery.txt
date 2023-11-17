@@ -1,0 +1,35 @@
+country
+
+country_id	name
+
+1		Canada
+2		Mexico
+3		Cuba
+4		France
+5		Spain
+6		Italy
+7		China
+
+city
+
+city_id	 country_id	name
+
+1	 6	        Milan
+2	 6	        Rome
+3	 7		Beijing
+4	 4		Nice
+5	 4		Paris
+6	 1		Toronto
+7	 5		Seville
+If you want to select all the cities in France, you'd write this:
+
+SELECT name FROM city WHERE country_id=4;
+That works, but only if you know that the id of France is 4. But what if you don't know that? What if you want to select all the cities by only knowing the name of the country?
+
+You could write a statement that looks like this:
+
+SELECT name FROM city 
+WHERE country_id = (SELECT country_id from country WHERE name='France');
+This query uses a subquery. You can use a subquery to run a SELECT statement inside another statement. The subquery runs first and pulls back the id of the country whose name is France. You can then use that in your other SELECT statement to pull back all the cities in that country. Now you don't have to hard code ids and memorize every id in your database.
+
+But subqueries only work for so many things, and they're slow. It'd be best to use a JOIN clause for this type of query.

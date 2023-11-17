@@ -1,0 +1,12 @@
+Mathematical expressions
+You can perform mathematical operations in SQL statements. You can either perform operations between columns, or a column and a literal:
+
+-- add 3 to everybody's age
+SELECT age + 3 FROM person;
+
+-- calculate sales tax
+SELECT subtotal * 0.05 FROM sale;
+
+-- calculate total employee compensation (salary + bonus)
+SELECT salary + bonus FROM employee;
+You can write these expressions in the SELECT clause of statements, as shown here. You can also write them in WHERE clauses, which you'll learn about in the next lesson.

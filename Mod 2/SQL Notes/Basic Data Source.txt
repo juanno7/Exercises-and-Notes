@@ -1,0 +1,22 @@
+You need to create an instance of BasicDataSource within the application and pass your connection string to it using the setUrl() method:
+
+// BookstoreApp.java
+package com.bookstore;
+
+import org.apache.commons.dbcp2.BasicDataSource; // import Apache BasicDataSource
+
+public class BookstoreApp {
+
+    public static void main(String[] args) {
+        BookstoreApp bookstoreApp = new BookstoreApp();
+        bookstoreApp.run();
+    }
+
+    private void run() {
+
+        // Instantiate datasource and set connection string
+        BasicDataSource dataSource = new BasicDataSource();
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/bookstore");
+
+    }
+}

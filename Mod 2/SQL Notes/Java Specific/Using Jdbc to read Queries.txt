@@ -1,0 +1,33 @@
+The JdbcTemplate class provides several methods for running SQL queries.
+In many cases, you'll use the queryForRowSet() method and pass it a String that contains a SQL query. 
+In this example you see a SQL query for selecting all authors from the author table passed to queryForRowSet():
+
+// JdbcAuthorDao.java - getAuthors()
+
+String sql = "SELECT author_id, first_name, last_name FROM author;";
+
+SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+
+Tip: Always assign your SQL to a variable
+It's best practice to assign the SQL string to a variable, and then pass the variable to the JdbcTemplate method. It makes for more readable and maintainable code.
+
+Reading the results from a SqlRowSet is like reading input from a Scanner in file I/O. You loop through the results in a while loop using the next() method of the SqlRowSet. When you call the next() method, the SqlRowSet moves to the next row of the result set. It returns true when it successfully moves to a row. It returns false if there are no more rows to read:
+
+String sql = "SELECT author_id, first_name, last_name FROM author;";
+SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+
+while (results.next()) {
+    // iterate through the rows of the result set
+}
+
+The SqlRowSet has many methods for retrieving column values from a row and converting them to the corresponding Java types. Each method takes the name of the column to retrieve.
+
+For instance, getInt("author_id") retrieves the value from the author_id column, which is a database int, and returns a Java int. getString("first_name") does the same thing, but for the first_name column, which is a database varchar, and returns a Java String:
+
+while (results.next()) {
+    int authorId = results.getInt("author_id");
+    String firstName = results.getString("first_name");
+    String lastName = results.getString("last_name");
+}
+
+

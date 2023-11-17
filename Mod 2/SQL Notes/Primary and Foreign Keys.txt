@@ -1,0 +1,7 @@
+Primary keys are unique and only appear in one table
+ex Social Security
+Can only be used for one person
+
+Foreign Keys are in multiple tables and are not unique
+ex A shared Home Address for Amazon
+Can be used for multiple people

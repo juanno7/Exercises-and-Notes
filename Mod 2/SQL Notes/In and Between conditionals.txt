@@ -1,0 +1,19 @@
+The IN conditional
+
+The IN conditional works like multiple OR conditions for one column and multiple values. 
+For example, if you wanted to get people named Mary, Ted, or Alex, you'd write a query like this:
+
+-- Get all people with the first name of Mary, Ted, or Alex
+SELECT first_name, last_name FROM person WHERE first_name IN ('Mary', 'Ted', 'Alex');
+
+The BETWEEN conditional
+
+The BETWEEN conditional is like using a greater than or equal (>=) and a less than or equal (<=) together. 
+This query is equivalent to using WHERE age >= 18 AND age <= 34:
+
+-- Get all people whose age is between 18 and 34 (inclusive)
+SELECT first_name, last_name, age FROM person WHERE age BETWEEN 18 AND 34;
+
+You can also use NOT in front of BETWEEN to get all rows that aren't in a range:
+
+SELECT first_name, last_name, age FROM person WHERE age NOT BETWEEN 18 AND 34;

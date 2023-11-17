@@ -1,0 +1,11 @@
+You may notice that Postman also offers multiple body formats. The format you use depends on what the API expects and the data you're sending. The most commonly used formats are:
+
+form-data: 
+the same way data is submitted on a website form using key-value pairs. You can also attach and upload files with this format.
+
+x-www-form-urlencoded:
+another key-value pair format, where all non-alphanumeric characters are replaced with a "URL encoded" value. You may be familiar with this if you've ever seen %20 instead of a space in a filename. 
+Files can't be attached in this format. This isn't usually interchangeable with form-data.
+
+raw: 
+lets you enter plain text. This format is helpful if you need to send JSON or XML.

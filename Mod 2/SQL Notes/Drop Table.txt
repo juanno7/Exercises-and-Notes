@@ -1,0 +1,17 @@
+DROP TABLE
+
+The DROP TABLE statement deletes a table, and all the data it contains, from the database.
+
+When writing a SQL script that includes CREATE TABLE statements, it's convenient to include DROP TABLE statements at the beginning so the script can be re-run to reset the database. Without the DROP TABLE statements first, the CREATE TABLE statements would cause errors since you can't create a table that already exists.
+
+Start by specifying the name of the table to you want to delete. For example, to remove a table named product, you'd do this:
+
+DROP TABLE product;
+
+DROP TABLE causes an error if the specified table doesn't exist. To avoid that error, add IF EXISTS like this:
+
+DROP TABLE IF EXISTS product;
+
+When executing DROP TABLE statements, the database must maintain referential integrity. This means an error occurs if you attempt to drop a table that's referenced by foreign keys. To eliminate the table along with all the foreign key constraints that reference it, add the CASCADE keyword after the table name:
+
+DROP TABLE IF EXISTS product CASCADE;

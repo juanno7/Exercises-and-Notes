@@ -1,0 +1,7 @@
+There are three types of SQL statements:
+
+The Data Manipulation Language (DML) that allows a programmer to insert, update, and delete data from the tables and select that data back out again.
+
+The Data Definition Language (DDL) that allows a programmer to create new tables and define the data types of the columns on tables.
+
+The Data Control Language (DCL) that allows a programmer to specify new users of the database and which tables and actions they have access to.

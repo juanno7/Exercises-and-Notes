@@ -1,0 +1,39 @@
+Multiple parameters
+So one parameter works for a single value, but what about times when you need to search based on multiple values? For example, finding all books written by a particular author might require a parameter for first_name and last_name:
+
+SELECT book_id, book.author_id, title, price, publish_date, out_of_print
+JOIN author ON author.author_id = book.author_id
+WHERE first_name = ? AND last_name = ?;
+Well, queryForRowSet() can accept more than one placeholder parameter. It can accept as many as you need:
+
+// JdbcBookDao.java
+public List<Book> getBooksByAuthor(String firstName, String lastName) {
+    List<Book> books = new ArrayList<>();
+
+    String sql =
+            "SELECT book_id, book.author_id, title, price, publish_date, out_of_print " +
+                "FROM book JOIN author ON author.author_id = book.author_id " +
+                "WHERE first_name = ? AND last_name = ?;";
+
+    // notice firstName and lastName being passed to queryForRowSet()
+    SqlRowSet results = jdbcTemplate.queryForRowSet(sql, firstName, lastName);
+
+    while (results.next()) {
+        // Expect more than one book, so `while (results.next())` necessary
+        books.add(mapRowToBook(results));
+    }
+
+    return books;
+}
+
+
+It's important to note that the order of the parameters does matter. JdbcTemplate replaces the placeholders with the values in the same order as they're written in the query. You must take caution when working with multiple parameters that you put them in the desired order.
+
+Note: Java's powerful placeholders
+Not only does ? serve as a placeholder, but Java adds an extra power. The values passed in are automatically wrapped with their appropriate SQL delimiters: "Ted" becomes 'Ted' and "Chiang" becomes 'Chiang'.
+
+Even strings with embedded apostrophes are correctly transformed. For example, the book title "Farnham's Freehold" gets translated to 'Farnham''s Freehold'.
+
+Date and time values are similarly wrapped.
+
+

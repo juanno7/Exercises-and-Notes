@@ -1,0 +1,16 @@
+ALTER TABLE
+
+The ALTER TABLE statement makes changes to an existing table. It can add or remove individual fields and constraints.
+
+When writing a SQL script to implement a database design, it's sometimes necessary to add certain constraints after another table has been created or data has been inserted into tables. In those situations, rather than adding the constraints as part of the CREATE TABLE statement, you'll add them with an ALTER TABLE.
+
+Most constraints are added using the same syntax they have in a CREATE TABLE statement. For example, if you had an assignment table that included a student id from the student table, you'd add the foreign key constraint like this:
+
+ALTER TABLE assignment ADD CONSTRAINT FK_assignment_student FOREIGN KEY(student_id) REFERENCES student(student_id);
+
+PostgreSQL handles NOT NULL constraints differently than other constraints. You add a NOT NULL constraint with ALTER TABLE like this:
+
+ALTER TABLE assignment ALTER COLUMN student_id SET NOT NULL;
+
+Tip: Refer to an existing file
+Since DDL isn't something most developers use on a regular basis, it's helpful to refer to an existing DDL file to remember the exact syntax when you are writing the SQL script for your database design. For example, you could refer to the files used to create the databases you've been using in prior units.

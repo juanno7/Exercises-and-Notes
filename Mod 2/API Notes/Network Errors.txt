@@ -1,0 +1,15 @@
+Network errors
+RestTemplate alerts an application of any errors by throwing Java exceptions rather than returning error or status codes. This means using try/catch blocks.
+
+In the case of general network I/O, errors that prevent the request from reaching the server, like the server being offline, or prevent the response from coming back, like losing your connection, are reflected as a failure to access a resource.
+
+RestTemplate throws a ResourceAccessException to alert the application that there was a network I/O problem:
+
+try {
+    restTemplate.put(API_URL + "users/remove/23");
+}
+catch (ResourceAccessException e) {
+    System.out.println(e.getMessage());
+}
+
+Since the error is related to the network, the application usually can't resolve the issue unless the error is an invalid URL or a similar configuration issue. Frequently, the only course of action is to report the error and possibly allow the user to retry.

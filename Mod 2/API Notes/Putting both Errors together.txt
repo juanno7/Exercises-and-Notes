@@ -1,0 +1,17 @@
+Putting it together
+
+Now you know how to handle different types of errors, how do you put these techniques together?
+
+Here, you cascade the catch blocks:
+
+try {
+    restTemplate.put(API_URL + "users/remove/23");
+}
+catch (ResourceAccessException e) {
+    // Handle network I/O errors
+    System.out.println(e.getMessage());
+}
+catch (RestClientResponseException e) {
+    // Handle response status codes 4xx and 5xx
+    System.out.println(e.getRawStatusCode());
+}

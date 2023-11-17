@@ -1,0 +1,10 @@
+Using dates in conditionals
+When you use a date in SQL, you surround it with single quotes like a string. Write dates in YYYY-MM-DD format.
+
+You can use dates in >, >=, <, <=, IN, and BETWEEN conditionals:
+
+-- Get all people born on Jan 5, 1970, or later
+SELECT first_name, last_name FROM person WHERE birth_date >= '1970-01-05';
+
+-- Get all people born between Jan 1, 1990 and Dec 31, 1999
+SELECT first_name, last_name FROM person WHERE birth_date BETWEEN '1990-01-01' AND '1999-12-31';

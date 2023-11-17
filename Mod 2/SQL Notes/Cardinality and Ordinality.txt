@@ -1,0 +1,3 @@
+Cardinality refers to the maximum number of times an instance in one entity can relate to instances of another entity.
+
+Ordinality is the minimum number of times an instance in one entity can be associated with an instance in the related entity.

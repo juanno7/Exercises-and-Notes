@@ -1,0 +1,17 @@
+Subquery primary key
+
+Continuing with the Tegucigalpa example, there's another technique that's commonly used when inserting rows into a table with one or more foreign keys such as country_code in the city table. Rather than hardcoding the primary key, HND for Honduras, you can use a subquery to retrieve the primary key for Honduras from the country table:
+
+INSERT INTO city (country_code, name, population)
+VALUES ((SELECT code FROM country WHERE name = 'Honduras'), 'Tegucigalpa', 1276738);
+
+The subquery (SELECT code FROM country WHERE name = 'Honduras') replaces the hardcoded 'HND'. Like all subqueries, it's wrapped in (), and in this case, contains a single column in the SELECT clause, the primary key value for 'Honduras'.
+
+Since country names are unique within the country table, the subquery's WHERE name = 'Honduras' returns a single row. Because the SELECT statement only includes one column, code, the entire subquery results in a single value, the primary key for Honduras. The primary key is used for the country_code column of the INSERT statement.
+
+You may use similar subqueries anytime you need to retrieve the primary key from another table for use with a foreign key when inserting into a table with one or more foreign keys. In other words, you may write as many subqueries as there are foreign keys in the INSERT INTO table if you want. The only requirement is that each subquery results in a single value. The WHERE clause of the subquery must return a single row, and the SELECT may contain only one column.
+
+Note: 
+
+Subquerying the primary key elsewhere
+You may find subquerying the primary key useful elsewhere in SQL, including UPDATE and DELETE statements, which are covered in the next lessons.

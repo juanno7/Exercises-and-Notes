@@ -1,0 +1,9 @@
+Aliases
+When using an expression in a SELECT statement, you'll often use an alias to give it a name. The expression needs a name like a column has a name. You use these names to access data in code, and you can't use it if it doesn't have a name.
+
+To give an expression an alias, you use the AS keyword:
+
+SELECT salary + bonus AS total_compensation FROM employee;
+You can use an alias for any column. It doesn't have to be an expression:
+
+SELECT name AS country_name FROM country;

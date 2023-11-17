@@ -1,0 +1,16 @@
+
+SQL type		Java type		Conversion method
+
+int			int			getInt()
+
+char, varchar		String			getString()
+
+boolean			boolean			getBoolean()
+
+decimal, numeric	BigDecimal		getBigDecimal()
+
+date			LocalDate		getDate().toLocalDate()
+
+time			LocalTime		getTime().toLocalTime()
+
+timestamp		LocalDateTime		getTimestamp().toLocalDateTime()

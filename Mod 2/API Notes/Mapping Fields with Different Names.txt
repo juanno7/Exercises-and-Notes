@@ -1,0 +1,48 @@
+Mapping fields with different names
+Take notice of the time_last_updated field in the JSON response from the ExchangeRate-API:
+
+{
+  "base": "USD",
+  "date": "2021-08-10",
+  "time_last_updated": 1628553601,
+  "rates": {
+    ...
+  }
+}
+The naming conventions for Java differ from those in JSON, potentially complicating the transfer of data into your Java objects. Property names in JSON are usually in snake_case format, with their words separated by underscores. That differs from Java which typically names variables using the camelCase format. If you wanted the time_last_updated property, you'd probably want to name the field in your Java class timeLastUpdated to be consistent with the rest of your code. However, since their names aren't identical, the value in time_last_updated won't transfer seamlessly into timeLastUpdated.
+
+Luckily there's a way to map the JSON name to a different name in your Java class using the @JsonProperty() annotation.
+
+Place @JsonProperty() before the Java field you want to map, and assign it the name of the corresponding JSON property:
+
+// Import the JsonProperty annotation in order to use it.
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class ExchangeRates {
+    private String base;
+    private String date;
+    @JsonProperty("time_last_updated")
+    private int timeLastUpdated;
+    private Map<String, Double> rates;
+
+    // constructors, getters, setters...
+}
+
+With that in place, and the appropriate getter and setter, you can now access the value as part of the object:
+
+System.out.println(response.getTimeLastUpdated()); // prints 1628553601
+You can map as many fields as you need to in a class, and you're not stuck with the names in the JSON. For instance, say you wanted to name the Java field conversionRates instead of rates, you can add a @JsonProperty() annotation to conversionRates:
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class ExchangeRates {
+    private String base;
+    private String date;
+    @JsonProperty("time_last_updated")   // time_last_updated -> timeLastUpdated
+    private int timeLastUpdated;
+    @JsonProperty("rates")               // rates -> conversionRates
+    private Map<String, Double> conversionRates;
+
+    // constructors, getters, setters...
+}

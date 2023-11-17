@@ -1,0 +1,33 @@
+Wildcard searches
+You can use SQL parameters for LIKE and ILIKE values too. Using them gives your application a "search" feature where the user can type in a search term and your application can return all matching results.
+
+This example find all books with a matching title to a user's search:
+
+public List<Book> getBooksByTitle(String title, boolean useWildCard) {
+    List<Book> books = new ArrayList<>();
+
+    if (useWildCard) {
+        title = "%" + title + "%"; // must add wildcards manually
+    }
+
+    String sql = "SELECT book_id, author_id, title, price, " +
+            "publish_date, out_of_print FROM book " +
+            "WHERE title ILIKE ?;";
+    SqlRowSet results = jdbcTemplate.queryForRowSet(sql, title);
+
+    while (results.next()) {
+        // Expect more than one book, so `while (results.next())` necessary
+        books.add(mapRowToBook(results));
+    }
+
+    return books;
+}
+
+This looks similar to the other methods—it takes a value in the parameter title and binds it to the SQL query. Though there's an extra step to concatenate title with SQL wildcard characters %. They don't get added automatically for you. This allows you to do things like making the wildcard match optional—meaning a strict match—or have a "starts with" or "ends with" type of match by only adding the wildcard to the one side of the search term.
+
+Warning: 
+
+Don't concatenate parameters in your SQL string
+You may wonder why you can't just concatenate the parameters directly into your SQL like "WHERE title = '" + title + "';".
+
+Adding SQL parameters this way makes your application vulnerable to something called a SQL injection attack. In short, malicious users can use a specially crafted string for title that can get other data from your database, make changes, or even destroy data. Using parameters like shown in these examples prevent SQL injection attacks.

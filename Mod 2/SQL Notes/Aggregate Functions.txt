@@ -1,0 +1,40 @@
+Instead of manually counting the rows, you can tell the database to count the rows like this:
+
+SELECT COUNT(*) FROM child;
+Result:
+
+count
+4
+Using these functions, you can collapse your data down into pieces of information. COUNT(*) tells you how many rows are returned from the statement.
+
+You can use WHERE clauses to filter the data down too. If you run the following statement:
+
+SELECT COUNT(*) FROM child WHERE last_name = 'Smith';
+It gives you this result:
+
+count
+2
+So, COUNT(*) counts the number of rows.
+
+There are some other aggregate functions, too.
+
+AVG(column) returns the average value in a certain column:
+
+SELECT AVG(age) FROM child;
+avg
+9.5
+SUM(column) adds up all the value from a certain column:
+
+SELECT SUM(age) FROM child;
+sum
+38
+MIN(column) gives you the smallest value in that column:
+
+SELECT MIN(age) FROM child;
+min
+8
+MAX(column) gives you the largest value in that column:
+
+SELECT MAX(age) FROM child;
+max
+11

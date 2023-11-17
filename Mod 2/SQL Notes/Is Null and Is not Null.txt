@@ -1,0 +1,8 @@
+The IS NULL and IS NOT NULL conditionals
+You can use IS NULL and IS NOT NULL to retrieve rows where a value is or isn't null:
+
+-- Get all people who don't have a favorite color
+SELECT first_name, last_name FROM person WHERE favorite_color IS NULL;
+
+-- Get all people who DO have a favorite color
+SELECT first_name, last_name, color FROM person WHERE favorite_color IS NOT NULL;

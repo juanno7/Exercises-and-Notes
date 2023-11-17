@@ -1,0 +1,15 @@
+Handling database nulls
+As you know, database columns can contain null values if they're not defined as NOT NULL. This can result in unexpected values or a thrown exception if you aren't careful.
+
+Look back at the ERD at the top of the previous lesson and note that publish_date allows nulls.
+
+If you try to convert a database NULL for a value type, like numbers or booleans, you'll get the default value for the data type. That means a database NULL passed to getInt() returns 0, and passed to getBoolean() returns false.
+
+If you try to convert a database NULL to a reference type, like Date or BigDecimal, you'll get null. However, that null value can present a problem if you try to call a method or attribute on it. In other words, if getDate("publish_date") returns null, you can't call toLocalDate() on it, or Java throws a NullPointerException if you do.
+
+To avoid the problem, always check for null if the column allows nulls in the database before calling a method on it:
+
+LocalDate publishDate = null;
+if (results.getDate("publish_date") != null) {
+    publishDate = results.getDate("publish_date").toLocalDate();
+}

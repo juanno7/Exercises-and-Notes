@@ -1,0 +1,47 @@
+JdbcTemplate has a constructor that takes a DataSource parameter, which you'll pass the one created with the connection string for the database you want to connect to.
+
+Since JdbcTemplate also has methods that you'll use for running SQL statements, this is usually declared in your DAO class. You can pass the DataSource into the constructor of your DAO class and instantiate a new JdbcTemplate there:
+
+// BookstoreApp.java
+private void run() {
+
+    // Instantiate datasource and set connection string
+    BasicDataSource dataSource = new BasicDataSource();
+    dataSource.setUrl("jdbc:postgresql://localhost:5432/bookstore");
+
+    // Set connection credentials
+    dataSource.setUsername("bookstore_user");
+    dataSource.setPassword("r3@d1ng1sc00l");
+
+    // Create an instance of JdbcAuthorDao, passing in dataSource
+    JdbcAuthorDao authorDao = new JdbcAuthorDao(dataSource);
+
+    // Create an instance of JdbcBookDao, passing in dataSource
+    JdbcBookDao bookDao = new JdbcBookDao(dataSource);
+}
+
+// JdbcAuthorDao.java
+public class JdbcAuthorDao {
+
+    // JdbcTemplate that is used by the JdbcAuthorDao class
+    private final JdbcTemplate jdbcTemplate;
+
+    // JdbcAuthorDao constructor, accepts a DataSource parameter
+    public JdbcAuthorDao(DataSource dataSource) {
+        // Create an new instance of JdbcTemplate, passing in dataSource
+        jdbcTemplate = new JdbcTemplate(dataSource);
+    }
+}
+
+// JdbcBookDao.java
+public class JdbcBookDao {
+
+    // JdbcTemplate that is used by the JdbcBookDao class
+    private final JdbcTemplate jdbcTemplate;
+
+    // JdbcBookDao constructor, accepts a DataSource parameter
+    public JdbcBookDao(DataSource dataSource) {
+        // Create an new instance of JdbcTemplate, passing in dataSource
+        jdbcTemplate = new JdbcTemplate(dataSource);
+    }
+}

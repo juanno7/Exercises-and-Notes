@@ -1,0 +1,58 @@
+Parsing JSON
+You can use RestTemplate to make the request using HTTP GET, retrieve the response, and deserialize the response body—meaning the JSON—into a Java object or array of objects.
+
+RestTemplate uses a deserializer, which converts a string into an object or array of objects. RestTemplate attempts to map every field in the JSON response to a Java class you provide. If the mapping results in an array of objects, you can use an array or one of the Java Collections structures to store the data.
+
+First, you need to define the class for JSON you're expecting. Take a look at the return JSON from the ExchangeRate-API:
+
+{
+  "base": "USD",
+  "date": "2021-08-10",
+  "time_last_updated": 1628553601,
+  "rates": {
+    "USD": 1,
+    "AED": 3.67,
+    "AFN": 79.94,
+    "ALL": 103.28,
+    "AMD": 491.29,
+    "ANG": 1.79,
+    "AOA": 643.02,
+    "ARS": 96.89,
+    "AUD": 1.36,
+    "AWG": 1.79,
+    //the rest omitted for brevity
+  }
+}
+Next define your class. Be sure to declare your data members using names that match those of the JSON object:
+
+public class ExchangeRates {
+    private String base;
+    private String date;
+    private Map<String, Double> rates;
+
+    // constructors, getters, setters...
+}
+
+Make the GET request:
+
+ExchangeRates response = restTemplate.getForObject(
+                "https://api.exchangerate-api.com/v4/latest/USD",
+                ExchangeRates.class);
+
+You'll notice that this request, though similar, differs from previous GET requests in two important ways:
+
+restTemplate calls on the getForObject() method to return the JSON as an object.
+ExchangeRates.class replaces the String.class.
+In this statement, restTemplate returns an instantiated ExchangeRates object populated with the JSON data. To access the data, call the getter methods defined in the class:
+
+System.out.println(response.getBase()); // prints USD
+System.out.println(response.getDate()); // prints 2021-08-10
+// etc...
+
+If you don't want all the fields returned by the API, you can omit them from your class. For example, if you don't want the base and date fields, declare the ExchangeRates class as shown:
+
+public class ExchangeRates {
+    private Map<String, Double> rates;
+
+    // constructors, getters, setters...
+}

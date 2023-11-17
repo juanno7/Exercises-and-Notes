@@ -1,0 +1,26 @@
+country:
+
+country_id	name
+1		Canada
+2		Mexico
+3		Cuba
+4		France
+5		Spain
+6		Italy
+7		China
+
+city:
+
+city_id	country_id	name
+1	6		Milan
+2	6		Rome
+3	7		Beijing
+4	4		Nice
+5	4		Paris
+6	1		Toronto
+7	5		Seville
+
+
+These two tables both have primary keys, but the city table also has a foreign key called country_id that links to the country table. In SQL, that looks something like this:
+
+ALTER TABLE city ADD FOREIGN KEY (country_id) REFERENCES country(country_id);
