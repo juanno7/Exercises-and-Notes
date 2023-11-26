@@ -1,0 +1,24 @@
+Creating REST APIs
+In the previous unit, you learned how to create GET and POST handler methods. Creating PUT and DELETE handler methods follows a similar process and requires adding the respective HTTP method to the RequestMapping declaration:
+
+@RequestMapping(path = "/todos/{id}", method = RequestMethod.PUT)
+public Todo update(@PathVariable int id, @RequestBody Todo todo) {
+    // id on the path takes precedence over the id in the request body, if any
+    todo.setId(id);
+    try {
+        Todo updatedTodo = todoDao.updateTodo(todo);
+        return updatedTodo;
+    } catch (DaoException e) {
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Todo not found");
+    }
+}
+
+@RequestMapping(path = "/todos/{id}", method = RequestMethod.DELETE)
+public void delete(@PathVariable int id) {
+    todoDao.deleteTodoById(id);
+}
+
+
+Note that the code in update() sets the ID from the path into the object received in the request body. There could be two different IDs in the request: one in the URL and (potentially) one in the request body. Since a URL uniquely identifies a resource, the ID in the URL takes precedence over any value that was in the request body.
+
+Also, take note that the DAO updateTodo() method throws a DaoException if the item to update isn't found. The controller catches the exception and throws a ResponseStatusException with a status of NOT_FOUND.

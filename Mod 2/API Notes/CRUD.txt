@@ -1,0 +1,27 @@
+Actions on resources
+The HTTP method defines the action on a resource. You've already seen GET and POST, while you may not have seen PUT and DELETE until now. These four methods are commonly used for "CRUD" operations on your resources.
+
+CRUD
+CRUD is an acronym that stands for Create, Retrieve, Update, and Delete. These are the four basic operations that you can perform on data:
+
+To Create a new resource, you POST data to the URL for that resource.
+To Retrieve resources, you GET from the URL for that resource. You can set this up to send search parameters to specify which todos you want, like GET /todos/search?task=hotels or GET /todos/search?dueAfter=2023-10-15.
+To Retrieve a specific resource, you GET from a resource URL with an ID.
+To Update a resource, you PUT data to a resource URL with an ID.
+To Delete a resource, you DELETE a resource URL with an ID.
+The following table shows you how these CRUD operations apply to the /todos example:
+
+Operation	HTTP Method	URL					Use
+
+
+Create		POST		/todos				Create a new todo using data passed in the request
+
+Retrieve	GET		/todos				Retrieve all todos
+
+Retrieve	GET		/todos/search?task=hotels	Retrieve all todos that match the search
+
+Retrieve	GET		/todos/5			Retrieve the todo with an ID of 5
+
+Update		PUT		/todos/5			Update an existing todo with an ID of 5 using data passed in the request
+
+Delete		DELETE		/todos/5			Delete the todo with an ID of 5

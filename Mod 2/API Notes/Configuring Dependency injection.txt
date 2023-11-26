@@ -1,0 +1,30 @@
+Configuring dependency injection
+In Spring, if you want to inject one class into another, you add an annotation. For the DAOs, you add the @Component annotation:
+
+@Component
+public class JdbcTodoDao implements TodoDao {
+    ...
+}
+
+Now, the JdbcTodoDao class can be injected into other classes, like the controller. To inject the DAO into the controller, you declare a constructor parameter of the class you depend on in the controller like this:
+
+private final TodoDao todoDao;
+
+public TodoController(TodoDao dao) {
+    this.todoDao = dao;
+}
+
+When Spring creates the controller, it also creates an instance of the DAO class with the @Component annotation and injects it into the controller for you.
+
+This also makes the controller easier to unit test. When creating a new controller in a unit test, you can pass in a test version of the TodoDao:
+
+TodoController testController = new TodoController(new TestTodoDao());
+
+This allows the TodoController to depend on any TodoDao without tying it to a single implementation of TodoDao.
+
+
+Swapping implementations
+
+Another reason to use dependency injection is if you ever need to change a component—for example, switching database platforms—you can simplify your changes and testing.
+
+If you design the system with dependency injection in mind, you can create a new DAO class that implements the same interface. Since your existing code uses the interface methods and not the class methods, the only code you'd need to change is the class that's provided by the injection.

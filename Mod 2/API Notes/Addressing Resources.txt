@@ -1,0 +1,10 @@
+Addressing resources
+
+Once you've identified the resources, you can build URLs to them. Each resource normally has its own URL. You access, retrieve, and modify resources through URLs, depending on which HTTP method you use.
+
+For example, if you wanted to work with a job jar site that contains tasks or todos, you might use a URL something like https://www.jobjar.org. From there, you might request a list of all the todos or a specific todo, as the table shows:
+
+Goal					URL
+
+Access all resources			/todos
+Access a single resource		/todos/34

@@ -1,0 +1,78 @@
+@RequestMapping elements
+
+The @RequestMapping annotation has several elements that define which web requests the handler method responds to.
+
+
+
+@RequestMapping(path=)
+
+The path element corresponds to the HTTP request path. In the example, both get() and add() handle requests for the /todos request path.
+
+
+
+@RequestMapping(method=)
+
+The method element specifies which HTTP request method, like GET, POST, or PUT, this handler method runs for. If you don't specify an HTTP request method, a handler method maps to all request methods.
+
+
+
+RequestMethod.GET
+
+The RequestMethod.GET argument specifies that the handler method runs for a GET request. The following code maps the list() handler method to a GET request for /todos:
+
+  @RequestMapping(path = "/todos", method = RequestMethod.GET)
+  public List<String> list() {
+      // ...
+  }
+
+
+Sending a GET request for the path /todos calls the list() method and returns the list of todos in JSON format:
+
+[
+    "Decide on vacation location",
+    "Research hotels",
+    "Make reservations"
+]
+
+
+
+RequestMethod.POST
+
+Like RequestMethod.GET, the RequestMethod.POST argument specifies that the handler method runs for a POST request. This code maps the add() method to a POST request for /todos:
+
+@RequestMapping(path = "/todos", method = RequestMethod.POST)
+public String add(@RequestBody String todo) {
+    // ...
+}
+
+
+Tip: Share the RequestMapping across handler methods
+Rather than redundantly specify the same path for all the handler methods, you can establish a shared base path by annotating the controller class:
+
+@RestController
+@RequestMapping("/todos") // Shared base path for all handler methods
+
+public class TodoController {
+
+    // No path specified, maps to "/todos"
+    @RequestMapping(method = RequestMethod.GET)
+    public List<String> list() {
+        return todoDao.getTodos();
+    }
+
+    // Extend the base path with an id parameter
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
+    public String get(@PathVariable int id) {
+        return todoDao.getTodoById(id);
+    }
+
+    // No path specified, maps to "/todos"
+    @RequestMapping(method = RequestMethod.POST)
+    public String add(@RequestBody String todo) {
+        return todoDao.createTodo(todo);
+    }
+}
+
+You can extend the base path on a method-by-method basis. For example, the path="/{id}" string in the @RequestMapping(path="/{id}", ...) extends the base path to /todos/{id} for the get() handler method.
+
+

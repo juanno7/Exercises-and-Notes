@@ -1,0 +1,9 @@
+Using POST versus PUT
+
+The question of whether to use POST or PUT is frequently asked by developers new to REST. The answer lies in the term idempotent. Programmers say an operation is idempotent if it produces the same result regardless of the number of times it's performed.
+
+PUT is idempotent because no matter how many times you perform the PUT operation, the results remain the same. You've just updated the resource with the same values again.
+
+POST on the other hand, isn't idempotent. Each time you POST, you create a new resource. If you POST a set of values five times, you've created five new resources.
+
+So then, as the table says, use POST to create a resource and PUT to update it. Furthermore, the URL for a POST doesn't contain an ID since you are creating a new resource, while the URL for a PUT contains an ID to identify the resource to update.

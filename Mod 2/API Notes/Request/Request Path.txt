@@ -1,0 +1,19 @@
+Request path
+What about a scenario where you want to find a specific todo by its ID? You could use a query string parameter for that—like /todos?id=2—but a popular REST convention is to use the ID as a part of the request path:
+
+# request path variable example
+http://localhost:8080/todos/2
+That request says, "Get the todo where its ID is 2."
+
+This is the handler method called for that request. Notice the @PathVariable annotation in the parameter list:
+
+@RequestMapping(path = "/todos/{id}", method = RequestMethod.GET)
+public Todo get(@PathVariable int id) {
+    return todoDao.getTodoById(id);
+}
+
+Model binding goes through the following steps after the routing system selects the handler method:
+
+Finds a parameter of get() with the @PathVariable annotation, an int named id.
+Looks at the path of the HTTP request and finds "2" in the position labeled {id} in the @RequestMapping annotation.
+Converts the string "2" into the int value 2 and assigns it to the argument id.

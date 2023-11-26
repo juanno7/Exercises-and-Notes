@@ -1,0 +1,54 @@
+Query string parameters
+There are times when you'll want to pass some information along to your API as part of the request. Imagine that you created a method in your Todo API where someone could retrieve all todos based on the task text. You might use a query string parameter named task that contains the user's search term. It would look like this:
+
+# request parameter example
+
+http://localhost:8080/todos/search?task=hotels
+Suppose you have the following handler method, take notice of the @RequestParam annotation in the parameter list:
+
+@RequestMapping(path = "/todos/search", method = RequestMethod.GET)
+public List<Todo> getByTask(@RequestParam String task) {
+    if (task != null) {
+        return todoDao.getTodosByTask(task);
+    } else {
+        return todoDao.getTodos();
+    }
+}
+
+Model binding goes through the following steps after the routing system selects the handler method:
+
+Finds a parameter of getByTask() with the @RequestParam annotation, a string named task.
+Looks at the query string and finds task=hotels. Name matching isn't case-sensitive.
+Sets the task parameter to the string value of "hotels".
+You can declare more than one request parameter:
+
+# multiple request parameters example
+http://localhost:8080/todos/search?task=hotels&limit=20
+@RequestMapping(path = "/todos/search", method = RequestMethod.GET)
+public List<Todo> getByTask(@RequestParam String task,
+                            @RequestParam int limit) {
+    if (task != null) {
+        return todoDao.getTodosByTask(task, limit);
+    } else {
+        return todoDao.getTodos();
+    }
+}
+
+All parameters must have a value, so if you don't pass a value for limit to the method, it throws an exception. If you want a parameter to be optional, you can set the @RequestParam annotation's defaultValue element to a value to use when the caller doesn't specify limit:
+
+@RequestMapping(path = "/todos", method = RequestMethod.GET)
+public List<Todo> getByTask(@RequestParam String task,
+                            @RequestParam(defaultValue = "10") int limit) {
+    // The quotes around "10" for the defaultValue are required, conversion
+    // to the int limit parameter is performed by model binding
+    if (task != null) {
+        return todoDao.getTodosByTask(task, limit);
+    } else {
+        return todoDao.getTodos();
+    }
+}
+
+Note: Handling parameters with different names
+What if a request parameter name doesn't follow Java naming conventions? For example, what if instead of limit the name of the request parameter is todo_limit? To match that request parameter with a method parameter that has a different name, use the name property of @RequestParam like this: @RequestParam(name = "todo_limit", defaultValue = "10") int limit
+
+

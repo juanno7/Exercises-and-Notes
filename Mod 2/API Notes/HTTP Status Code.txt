@@ -1,0 +1,19 @@
+HTTP status codes
+APIs return HTTP status codes, and these status codes inform frontend applications if any errors occurred or if everything worked successfully. Here are some common codes returned:
+
+Code	Description	Use
+
+200	OK		Everything worked as expected—data returned in the response body. Common response to GET requests and to PUT requests when response 			includes data.
+201	Created		The request created a new resource on the server. Common response to POST requests.
+
+204	No Content	Everything worked but there is no data returned. Common response to DELETE requests and to PUT requests when response doesn't 				include data.
+304	Not Modified	The data hasn't changed since it was last retrieved. Used to respond to GET requests so data doesn't have to be re-downloaded if it 			hasn't changed.
+400	Bad Request	The request from the frontend had errors. Check the data passed back to see more specifics about the error. Often a data validation 			problem.
+401	Unauthorized	The user isn't allowed to perform this action either because they aren't logged in or because their login information is wrong.
+
+403	Forbidden	The logged in user isn't allowed to perform this action because they don't have permission.
+
+404	Not Found	The given URL doesn't point to a valid resource.
+
+405	Method Not Allowed	The HTTP method used isn't valid for this URL. This could be because the server doesn't allow creating, updating or deleting 				the resource.
+500	Internal Server Error	The API itself has a problem and can't fulfill the request at this time. This could be due to a code issue or because 					services the API relies on, like databases or application servers, are down.

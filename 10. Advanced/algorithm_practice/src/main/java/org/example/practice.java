@@ -1,6 +1,6 @@
 package org.example;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class practice {
 
@@ -62,6 +62,26 @@ public class practice {
             return 0;
         }
         return factorial;
+    }
+
+    public static List<String> funWithAnagrams(List<String> text) {
+        Map<String, String> wordMap = new HashMap<>();
+        List<String> results = new ArrayList<>();
+
+        for(String word : text){
+            char[] charWords = word.toCharArray();
+            Arrays.sort(charWords);
+            String sorted = new String(charWords);
+            if(!wordMap.containsKey(sorted)){
+                wordMap.put(sorted, word);
+                results.add(word);
+            }
+        }
+        Collections.sort(results);
+
+        return results;
+
+
     }
 
 }

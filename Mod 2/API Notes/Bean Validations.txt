@@ -1,0 +1,85 @@
+Bean Validations are annotations added to Java model classes to verify that the data in objects match a certain set of criteria. For example, you might have a model class like the following:
+
+public class Todo {
+
+    private int id;
+    private String task;
+    private LocalDate dueDate;
+    private boolean completed;
+
+    /*** Getters and Setters ***/
+}
+
+If you wanted to make sure that all Todos had a task, you could add a validation annotations on the class like this:
+
+public class Todo {
+
+    private int id;
+    @NotBlank(message="Task must not be blank")
+    private String task;
+    private LocalDate dueDate;
+    private boolean completed;
+
+    /*** Getters and Setters ***/
+}
+
+Validation annotations allow you to centralize the validation information for a model. All validation annotations accept a message argument such as show with @NotBlank(message=). The message text displays when the validation fails. Individual validation annotations may take additional arguments to further specify validation rules.
+
+Often used validations include:
+
+Annotation	Applies to		Description
+@NotNull	Any			The variable can't be null.
+@NotEmpty	array, List, String	The variable can't be null. Also, if it's a list or array, it can't be empty. If it's a String, it can't be an 						empty string.
+@NotBlank	String			The variable can't be empty or only contain white space characters.
+@Min		int, long, BigDecimal	The variable must have a value greater than the specified minimum. Null values are skipped.
+@DecimalMin	BigDecimal		The variable must have a value greater than the specified minimum decimal. Null values are skipped.
+@Size	     array, List, String	The variable length, as an array, List, or String, must be within the bounds specified. Null values are skipped.
+@Past, @Future	Date, LocalDate		The variable must represent a date in the past/future. Null values are skipped.
+@Pattern	String			The variable must hold a value that matches the specified regular expression. Null values are skipped.
+
+The validations that you add to your model objects aren't automatically checked for you. To check them in your controller, you need to add the @Valid annotation to the handler method:
+
+@ResponseStatus(HttpStatus.CREATED)
+@RequestMapping(path = "/todos", method = RequestMethod.POST)
+public Todo add(@Valid @RequestBody Todo todo) {
+    return todoDao.createTodo(todo);
+}
+If the validation fails, meaning that the data supplied from the request doesn't pass the validation tests you defined in the model, then the response returns a status code of 400, and the following JSON object is returned back:
+
+{
+  "timestamp": "2022-07-07T13:47:34.040+00:00",
+  "status": 400,
+  "error": "Bad Request",
+  "message": "Validation failed for object='todo'. Error count: 1",
+  "errors": [
+      {
+          "codes": [
+              "NotBlank.todo.task",
+              "NotBlank.task",
+              "NotBlank.java.lang.String",
+              "NotBlank"
+          ],
+          "arguments": [
+              {
+                  "codes": [
+                      "todo.task",
+                      "task"
+                  ],
+                  "arguments": null,
+                  "defaultMessage": "task",
+                  "code": "task"
+              }
+          ],
+          "defaultMessage": "Task must not be blank",
+          "objectName": "todo",
+          "field": "task",
+          "rejectedValue": "",
+          "bindingFailure": false,
+          "code": "NotBlank"
+      }
+  ],
+  "path": "/todos"
+}
+
+You can then use this JSON object to give information back to the user about what went wrong by looping through response.errors and using the field and defaultMessage to get information about the error.
+

@@ -1,0 +1,37 @@
+Request body
+Earlier, you saw a Todo model that looked like this:
+
+public class Todo {
+
+    private int id;
+    private String task;
+    private LocalDate dueDate;
+    private boolean completed;
+
+    public Todo(int id, String task, LocalDate dueDate, boolean completed) {
+        this.id = id;
+        this.task = task;
+        this.dueDate = dueDate;
+        this.completed = completed;
+    }
+
+    // getters, setters & toString()
+}
+
+You could send a request with query string parameters needed to create a new Todo, but as you can see in the following code, writing a method with so many annotated parameters quickly becomes cumbersome:
+
+@RequestMapping(path = "/todos", method = RequestMethod.POST)
+public Todo add(@RequestParam int id,
+                    @RequestParam String task,
+                    @RequestParam LocalDate dueDate,
+                    @RequestParam boolean completed) {
+    // ...
+}
+
+Not to worry—there's a better way to handle this. You can use the @RequestBody annotation to have the request body read and deserialized into an object:
+
+@RequestMapping(path = "/todos", method = RequestMethod.POST)
+public Todo add(@RequestBody Todo todo) {
+    return todoDao.createTodo(todo);
+
+}

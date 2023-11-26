@@ -1,0 +1,6 @@
+Note: 
+What's an annotation?
+
+An annotation is a tag that's used to associate metadata with code blocks such as classes, methods, and variables. The compiler and runtime use this metadata to apply certain properties and features to the code block associated with the annotation. When an annotation precedes a code block, that code is "decorated" with the annotation.
+
+You can apply one or more annotations to nearly any block of code, but some annotations can only decorate certain blocks—for example, you can only use the @RestController annotation on a class. Annotations often have optional elements you can provide values for, like the method element of the @RequestMapping annotation in the example code. 
