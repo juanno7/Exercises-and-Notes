@@ -1,0 +1,12 @@
+Chewy Delight|Chew Toy|8.99|5|T01
+Feather Frenzy|Interactive Cat Toy|12.99|5|T02
+Kong Classic|Durable Dog Toy|15.99|5|T03
+Laser Chase|Interactive Laser Toy|6.99|5|T04
+Plush Pals|Soft Catnip Toy|5.99|5|T05
+Squeaky Surprise|Squeaky Dog Toy|7.99|5|T06
+Tunnel Time|Collapsible Cat Tunnel|14.99|5|T07
+Tough Tugger|Rope Dog Toy|9.99|5|T08
+Mice Mania|Catnip Mouse Toys|3.99|5|T09
+Fetch Master|Retractable Dog Ball Thrower|19.99|5|T10
+Puzzle Pup|Interactive Dog Puzzle|11.99|5|T11
+Fishy Friends|Feathered Fish Cat Toy|4.99|5|T12

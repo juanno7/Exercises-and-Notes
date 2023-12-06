@@ -1,0 +1,15 @@
+Purina 1|Purina|15.99|5|A01
+Purina Basics|Purina|16.99|5|A02
+Chicken Gravy|Fancy Feast|2.99|5|A03
+Pedigree Adult|Pedigree|19.99|5|D01
+Blue Buffalo Life Protection|Blue Buffalo|29.99|5|D02
+Hill's Science Diet Adult|Hill's Science Diet|24.99|5|D03
+Fancy Feast Gourmet|Fancy Feast|10.99|5|C01
+Royal Canin Indoor Adult|Royal Canin|14.99|5|C02
+Meow Mix Original|Meow Mix|8.99|5|C03
+Iams ProActive Health|Iams|22.99|5|D04
+Nutro Wholesome Essentials|Nutro|27.99|5|D05
+Wellness CORE Grain-Free|Wellness|31.99|5|D06
+Purina Pro Plan Savor|Purina|12.99|5|C04
+9Lives Daily Essentials|9Lives|7.99|5|C05
+Sheba Perfect Portions|Sheba|9.99|5|C06

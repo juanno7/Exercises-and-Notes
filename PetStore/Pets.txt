@@ -1,0 +1,17 @@
+Ramona|Cat|Orange, Brown, White|Available|10|110.00
+Qat|Cat|Black|Available|6|110.00
+Bruno|Dog|Black, White|Available|6|130.00
+Wolf|Dog|Black,White|Available|5|130.00
+Ruff Rattler|Dog|Brown, Tan|Available|7|140.00
+Luna|Cat|Blue, Silver|Available|9|115.00
+Bolt|Dog|Gray, Red|Available|5|125.00
+Whiskers|Cat|Green, Yellow|Available|10|105.00
+Rocky|Dog|Brown, Black|Available|8|135.00
+Shadow|Dog|Black, White|Available|5|130.00
+Mocha|Cat|Brown, Tan|Available|8|120.00
+Bailey|Dog|Gray, Brown|Available|7|140.00
+Ruby|Dog|Red|Available|5|125.00
+Oliver|Cat|Green Eyes, White|Available|10|105.00
+Max|Dog|Black, Brown|Available|8|135.00
+Miso|Cat|Black, Brown, Gray|Available|1|100.00
+Cheeto|Cat|Orange, White|Available|4|120.00

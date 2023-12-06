@@ -4,9 +4,12 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        PetCreator.addPetsToList();
-        ToyCreator.addToys();
-        FoodCreator.addFood();
+//        PetCreator.addPetsToList();
+        PetCreator.initializePets("Pets.txt");
+        FoodCreator.initializeFood("Food.txt");
+        ToyCreator.initializeToys("Toys.txt");
+//        ToyCreator.addToys();
+//        FoodCreator.addFood();
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nWelcome to The Pet Store!");
 
@@ -43,7 +46,7 @@ public class App {
                     Money.feedMoney();
                     break;
                 case 5:
-                    PetStore.adoptionMenu();
+                    PetStore.adoptAPet();
                     break;
                 case 6:
                     PetStore.buyFood();

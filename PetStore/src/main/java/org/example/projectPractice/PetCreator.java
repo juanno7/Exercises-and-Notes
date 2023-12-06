@@ -1,8 +1,12 @@
 package org.example.projectPractice;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class PetCreator {
 
@@ -11,13 +15,15 @@ public class PetCreator {
     private Pets pet = new Pets();
     private static Scanner scanner = new Scanner(System.in);
 
-   public static Pets ramona = new Pets("Ramona", "Cat", "Orange Brown White", "Available", 10, 110.00);
-   public static Pets qat = new Pets("Qat", "Cat", "Black", "Available", 6, 110.00);
+    public static TreeMap<String, Pets> petInventory = new TreeMap<>();
 
-    public static void addPetsToList(){
-        Pets.petList.add(ramona);
-        Pets.petList.add(qat);
-    }
+//   public static Pets ramona = new Pets("Ramona", "Cat", "Orange Brown White", "Available", 10, 110.00);
+//   public static Pets qat = new Pets("Qat", "Cat", "Black", "Available", 6, 110.00);
+
+//    public static void addPetsToList(){
+//        Pets.petList.add(ramona);
+//        Pets.petList.add(qat);
+//    }
     public static void removePet(Pets pet){
         pet.setAvailability("Unavailable");
     }
@@ -47,4 +53,26 @@ public class PetCreator {
                 "\nThank you for finding " + pet.getName() + " a home!" +
                 "\n-------------------\n";
     }
+
+    public static void initializePets(String filePath){
+        try(BufferedReader reader = new BufferedReader(new FileReader(filePath))){
+            String line;
+            while ((line = reader.readLine()) != null){
+                String[] pets = line.split("\\|");
+                if(pets.length == 6){
+                    String petName = pets[0];
+                    String breed = pets[1];
+                    String color = pets[2];
+                    String available = pets[3];
+                    int age = Integer.parseInt(pets[4]);
+                    double price = Double.parseDouble(pets[5]);
+                    Pets animal = new Pets(petName, breed, color, available, age, price);
+                    petInventory.put(animal.getName(), animal);
+                }
+            }
+        }catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
 }

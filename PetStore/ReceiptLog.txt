@@ -1,0 +1,14 @@
+
+----- Receipt -----
+Item: Wellness CORE Grain-Free
+Price: $31.99
+Thank you for your purchase!
+-------------------
+Sold on: 12/05/2023 06:10:07 PM
+
+----- Receipt -----
+Item: Wellness CORE Grain-Free
+Price: $31.99
+Thank you for your purchase!
+-------------------
+Sold on: 12/05/2023 06:10:19 PM

@@ -8,16 +8,26 @@ public class Toys {
     private String type;
     private double price;
     private int quantity;
+    private String toyCode;
     public static List<Toys> toyList = new ArrayList<>();
 
     public Toys() {
     }
 
-    public Toys(String name, String type, double price, int quantity) {
+    public Toys(String name, String type, double price, int quantity, String toyCode) {
         this.name = name;
         this.type = type;
         this.price = price;
         this.quantity = quantity;
+        this.toyCode = toyCode;
+    }
+
+    public String getToyCode() {
+        return toyCode;
+    }
+
+    public void setToyCode(String toyCode) {
+        this.toyCode = toyCode;
     }
 
     public String getName() {
