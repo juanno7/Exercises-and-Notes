@@ -1,5 +1,6 @@
 package org.example.projectPractice;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Money {
@@ -32,7 +33,13 @@ public class Money {
         setAmountOfMoney(0);
     }
 
-    public static void transaction(double price){
+    public static void transaction(List<Double> price){
+            double sum = price.stream().mapToDouble(Double::doubleValue).sum();
+            setAmountOfMoney(amountOfMoney - sum);
+            System.out.println("Current Balance: $" + fullPrice(amountOfMoney));
+    }
+
+    public static void petTransaction(double price){
         setAmountOfMoney(amountOfMoney - price);
         System.out.println("Current Balance: $" + fullPrice(amountOfMoney));
     }

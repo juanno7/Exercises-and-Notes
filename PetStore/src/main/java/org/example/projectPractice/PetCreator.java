@@ -31,7 +31,7 @@ public class PetCreator {
     public static void renamePet(Pets pet){
         System.out.println("Would you like to rename your pet? \nY/N");
         String answer = scanner.nextLine();
-        if(answer.equals("Y")){
+        if(answer.equalsIgnoreCase("Y")){
             System.out.print("Please enter your pets new name: ");
             String name = scanner.nextLine();
             pet.setName(name);

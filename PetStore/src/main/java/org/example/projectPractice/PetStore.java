@@ -1,6 +1,8 @@
 package org.example.projectPractice;
 
-import java.util.Scanner;
+import java.util.*;
+
+import static java.util.Arrays.stream;
 
 public class PetStore {
     private static final Scanner scanner = new Scanner(System.in);
@@ -9,6 +11,9 @@ public class PetStore {
     private static Food food = new Food();
     private static Toys toy = new Toys();
     private static PetCreator petCreator = new PetCreator();
+    public static List<Food> cart = new ArrayList<>();
+    public static List<Double> foodPrices = new ArrayList<>();
+    public static List<String> foodNames = new ArrayList<>();
 
 
     public static String availability(int quantity){
@@ -29,7 +34,7 @@ public class PetStore {
                 System.out.println(certificate);
                 PetCreator.removePet(pet);
                 PetCreator.renamePet(pet);
-                Money.transaction(pet.getPrice());
+                Money.petTransaction(pet.getPrice());
                 Logger.certificateLogger(PetCreator.petCertificate(pet));
                 adopted = true;
                 System.out.println("Would you like to adopt another pet? Y/N");
@@ -55,7 +60,7 @@ public class PetStore {
 
     }
 
-    public static void buyFood() {
+    public void buyFood() {
         foodDisplay();
         System.out.println("\nAvailable Funds: $" + Money.fullPrice(Money.getAmountOfMoney()) + "\n");
         System.out.print("Welcome in! \nPress 'Enter' to continue");
@@ -63,23 +68,33 @@ public class PetStore {
         System.out.print("Please enter the code of the food you would like to purchase: ");
         String choice = scanner.nextLine();
         boolean found = false;
+        double sum = foodPrices.stream().mapToDouble(Double::doubleValue).sum();
 
         for (Food food : FoodCreator.foodInventory.values()) {
             if (choice.equalsIgnoreCase(food.getFoodCode()) && food.getQuantity() > 0 && Money.getAmountOfMoney() >= food.getPrice()) {
-                String receipt = FoodCreator.printReceipt(food);
-                System.out.println(receipt);
+                cart.add(food);
                 FoodCreator.removeFood(food);
-                Money.transaction(food.getPrice());
-                Logger.logger(receipt);
-                found = true;
+                displayCart(cart);
                 System.out.println("\nDone shopping? Y/N");
                 String answer = scanner.nextLine();
                 if(answer.equalsIgnoreCase("Y")) {
-                    System.out.println("Thank You for shopping!");
+                    if(Money.getAmountOfMoney() > sum){
+                        System.out.println("Insufficient funds to cover cart");
+                        FoodCreator.addFood(food);
+                        found = true;
+                        break;
+                    }
+                    System.out.println("\nThank You for shopping!");
+                    String receipt = FoodCreator.printReceipt(cart);
+                    System.out.println(receipt);
+                    Money.transaction(foodPrices);
+                    Logger.logger(FoodCreator.printReceipt(cart));
+                    found = true;
                     break;  // Exit the loop once a suitable food item is found
                 } else{
                     buyFood();
                 }
+                found = true;
             }
         }
 
@@ -126,6 +141,34 @@ public class PetStore {
             }
         }
     }
+
+    public void displayCart(List<Food> cart){
+        List<Double> prices = new ArrayList<>();
+        List<String> names = new ArrayList<>();
+        System.out.println("\nShopping Cart");
+        System.out.println("------------------------");
+        for (Food item : cart) {
+            foodPrices.add(item.getPrice());
+            foodNames.add(item.getName());
+            String name = item.getName();
+            names.add(name);
+            double price = item.getPrice();
+            prices.add(price);
+        }
+        if (!cart.isEmpty()) {
+            for (int i = 0; i < cart.size(); i++) {
+                System.out.println("Item: " + names.get(i) + " | Price: $" + prices.get(i));
+            }
+            double sum = prices.stream().mapToDouble(Double::doubleValue).sum();
+            System.out.println("\nTotal: $" + sum);
+        } else {
+            System.out.println("\nYour cart is empty.");
+        }
+
+        System.out.print("\nPress Enter to continue: ");
+        scanner.nextLine();
+    }
+
 
 
 

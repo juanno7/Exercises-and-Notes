@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+        PetStore petStore = new PetStore();
 //        PetCreator.addPetsToList();
         PetCreator.initializePets("Pets.txt");
         FoodCreator.initializeFood("Food.txt");
@@ -11,7 +12,10 @@ public class App {
 //        ToyCreator.addToys();
 //        FoodCreator.addFood();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nWelcome to The Pet Store!");
+        System.out.println("\nWelcome to The Gupgooze Pet Store!");
+        System.out.println("-------------------------------------");
+        System.out.print("Press enter to come in!");
+        scanner.nextLine();
 
         while (true){
             System.out.println("\n1. Browse Adoption Selection");
@@ -49,7 +53,7 @@ public class App {
                     PetStore.adoptAPet();
                     break;
                 case 6:
-                    PetStore.buyFood();
+                    petStore.buyFood();
                     break;
 
             }

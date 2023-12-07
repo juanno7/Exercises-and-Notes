@@ -3,14 +3,24 @@ package org.example.projectPractice;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeMap;
 
 public class FoodCreator {
     public static TreeMap<String, Food> foodInventory = new TreeMap<>();
 
     public static void removeFood(Food food){
-        food.setQuantity(food.getQuantity() - 1);
+                food.setQuantity(food.getQuantity() - 1);
     }
+    public static void addFood(Food food){
+        int counter = 0;
+        for(Food item: PetStore.cart){
+            counter++;
+        }
+        food.setQuantity(food.getQuantity() + counter);
+    }
+
 
     public static void initializeFood(String filepath){
         try(BufferedReader reader = new BufferedReader(new FileReader(filepath))){
@@ -33,12 +43,17 @@ public class FoodCreator {
         }
     }
 
-    public static String printReceipt(Food purchasedFood) {
-        return "\n----- Receipt -----" +
-                "\nItem: " + purchasedFood.getName() +
-                "\nPrice: $" + purchasedFood.getPrice() +
-                "\nThank you for your purchase!" +
-                "\n-------------------\n";
+    public static String printReceipt(List<Food> foods) {
+        String receipt = "";
+        for(int i = 0; i < foods.size(); i++) {
+            receipt =
+                    "\nItem: " + PetStore.foodNames.get(i) +
+                    "\nPrice: $" + PetStore.foodPrices.get(i) +
+                    "\nThank you for your purchase!" +
+                    "\n-------------------\n";
 
+        }
+        return "\n----- Receipt -----" + receipt + "\nThank you for your purchase!" +
+                "\n-------------------\n";
     }
 }

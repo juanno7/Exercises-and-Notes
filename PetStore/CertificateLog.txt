@@ -97,3 +97,201 @@ Date of Adoption: 12/05/2023 06:30:51 PM
 Thank you for finding Ruby a home!
 -------------------
 Certificate made on: 12/05/2023 06:32:00 PM
+
+----- Certificate -----
+Pet Name: Wolf
+Species: Dog
+Color: Black,White
+Age: 5
+Adoption Price: $130.00
+Date of Adoption: 12/06/2023 06:30:07 PM
+Thank you for finding Wolf a home!
+-------------------
+Certificate made on: 12/06/2023 06:32:00 PM
+
+----- Certificate -----
+Pet Name: Ramona
+Species: Cat
+Color: Orange, Brown, White
+Age: 10
+Adoption Price: $110.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Ramona a home!
+-------------------
+Certificate made on: 12/06/2023 06:42:04 PM
+
+----- Certificate -----
+Pet Name: Miso
+Species: Cat
+Color: Black, Brown, Gray
+Age: 1
+Adoption Price: $100.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Miso a home!
+-------------------
+Certificate made on: 12/06/2023 06:42:32 PM
+
+----- Certificate -----
+Pet Name: Cheeto
+Species: Cat
+Color: Orange, White
+Age: 4
+Adoption Price: $120.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Cheeto a home!
+-------------------
+Certificate made on: 12/06/2023 06:42:48 PM
+
+----- Certificate -----
+Pet Name: Qat
+Species: Cat
+Color: Black
+Age: 6
+Adoption Price: $110.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Qat a home!
+-------------------
+Certificate made on: 12/06/2023 06:43:18 PM
+
+----- Certificate -----
+Pet Name: Bruno
+Species: Dog
+Color: Black, White
+Age: 6
+Adoption Price: $130.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Bruno a home!
+-------------------
+Certificate made on: 12/06/2023 06:43:25 PM
+
+----- Certificate -----
+Pet Name: Wolf
+Species: Dog
+Color: Black,White
+Age: 5
+Adoption Price: $130.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Wolf a home!
+-------------------
+Certificate made on: 12/06/2023 06:43:59 PM
+
+----- Certificate -----
+Pet Name: Whiskers
+Species: Cat
+Color: Green, Yellow
+Age: 10
+Adoption Price: $105.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Whiskers a home!
+-------------------
+Certificate made on: 12/06/2023 06:44:13 PM
+
+----- Certificate -----
+Pet Name: Luna
+Species: Dog
+Color: Black, White
+Age: 5
+Adoption Price: $130.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Luna a home!
+-------------------
+Certificate made on: 12/06/2023 06:44:33 PM
+
+----- Certificate -----
+Pet Name: Shadow
+Species: Cat
+Color: Blue, Silver
+Age: 9
+Adoption Price: $115.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Shadow a home!
+-------------------
+Certificate made on: 12/06/2023 06:45:07 PM
+
+----- Certificate -----
+Pet Name: Mocha
+Species: Cat
+Color: Brown, Tan
+Age: 8
+Adoption Price: $120.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Mocha a home!
+-------------------
+Certificate made on: 12/06/2023 06:45:23 PM
+
+----- Certificate -----
+Pet Name: Bailey
+Species: Dog
+Color: Gray, Brown
+Age: 7
+Adoption Price: $140.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Bailey a home!
+-------------------
+Certificate made on: 12/06/2023 06:45:34 PM
+
+----- Certificate -----
+Pet Name: Max
+Species: Dog
+Color: Black, Brown
+Age: 8
+Adoption Price: $135.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Max a home!
+-------------------
+Certificate made on: 12/06/2023 06:45:47 PM
+
+----- Certificate -----
+Pet Name: Bolt
+Species: Dog
+Color: Gray, Red
+Age: 5
+Adoption Price: $125.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Bolt a home!
+-------------------
+Certificate made on: 12/06/2023 06:46:03 PM
+
+----- Certificate -----
+Pet Name: Oliver
+Species: Cat
+Color: Green Eyes, White
+Age: 10
+Adoption Price: $105.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Oliver a home!
+-------------------
+Certificate made on: 12/06/2023 06:46:14 PM
+
+----- Certificate -----
+Pet Name: Rocky
+Species: Dog
+Color: Brown, Black
+Age: 8
+Adoption Price: $135.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Rocky a home!
+-------------------
+Certificate made on: 12/06/2023 06:46:20 PM
+
+----- Certificate -----
+Pet Name: Ruby
+Species: Dog
+Color: Red
+Age: 5
+Adoption Price: $125.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Ruby a home!
+-------------------
+Certificate made on: 12/06/2023 06:46:30 PM
+
+----- Certificate -----
+Pet Name: Ruff Rattler
+Species: Dog
+Color: Brown, Tan
+Age: 7
+Adoption Price: $140.00
+Date of Adoption: 12/06/2023 06:36:26 PM
+Thank you for finding Ruff Rattler a home!
+-------------------
+Certificate made on: 12/06/2023 06:46:54 PM
